@@ -1,4 +1,4 @@
-function request() {
+export function GetRequest() {
   return fetch("http://localhost:3000/hospedes", {
     method: "GET",
     mode: "cors",
@@ -7,4 +7,3 @@ function request() {
   });
 }
 
-export default request
