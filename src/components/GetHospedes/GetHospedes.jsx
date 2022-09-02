@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import request from "../../service/requestHospedes";
+import { GetRequest } from "../../service/requestHospedes";
 
 function GetHospedes() {
   const [hospedes, setHospedes] = useState([]);  
 
   useEffect(() => {
-    request().then((data) => {
+    GetRequest().then((data) => {
       setHospedes(data);
     });
   }, []);
