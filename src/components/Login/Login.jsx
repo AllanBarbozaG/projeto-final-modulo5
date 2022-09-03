@@ -1,38 +1,38 @@
 import { useState } from "react";
-import Homepage from "../Homepage/Homepage";
+import style from "./login.module.css"
 
 function Login() {
   const [logado, setLogado] = useState(false);
 
   return (
-    <>
-      {logado ? (
-        <Homepage />
-        
-      ) : (
-        <>
-          <h1>Para acessar o sistema, informe seu usuário e senha abaixo.</h1>
+    <div className={style.home}>
+      <nav>
+        <div className="container-sidebar">
+          <div className="logo-sidebar">
+            <img src="./logo.png" />
+          </div>
 
-          <form action="send">
-            <label htmlFor="usuario">Usuario:</label>
-            <input type="text" name="usuario" />
-            <label htmlFor="senha">Senha:</label>
-            <input type="text" name="senha" />
-            <br />
-            <button
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                setLogado(true);
-              }}
-            >
-              Acessar
-            </button>
-          </form>
-        </>
-      )}
-    </>
-  );
+          <div className="inputs-sidebar">
+            <button> <img src="./botao-home.png" />Início</button>
+            <button> <img src="./calendario.png" />Reservas</button>
+            <button> <img src="./quartos.png" />Quartos</button>
+            <button> <img src="./hospedes.png" /> Hóspedes</button>
+            <button> <img src="./funcionarios.png" />Funcionários </button>
+            <button> <img src="./limpeza.png" />Controle de Limpezas </button>
+            <button> <img src="./join.png" />Entrar </button>
+          </div>
+          <div className="footer-sidebar">
+            <p>2022 version:T.18</p>
+          </div>
+        </div >
+      </nav>
+      <body>
+        <div className="container-home-pag">
+          <img src="./hotel.png"></img>
+        </div>
+      </body>
+    </div>
+  )
 }
 
 export default Login;
