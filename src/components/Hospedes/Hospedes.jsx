@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import DeleteHospede from "../DeleteHospede/DeleteHospede";
 import GetHospedes from "../GetHospedes/GetHospedes";
+import PostHospedes from "../PostHospedes/PostHospedes";
+import PutHospedes from "../PutHospedes/PutHospedes";
 
 function Hospedes() {
   const [methodForm, setMethodForm] = useState();
@@ -9,6 +12,12 @@ function Hospedes() {
     <>
       {methodForm == "get" ? (
         <GetHospedes />
+      ) : methodForm == "post" ? (
+        <PostHospedes />
+      ) : methodForm == "put" ? (
+        <PutHospedes />
+      ) : methodForm == "delete" ? (
+        <DeleteHospede />
       ) : (
         <>
           <label htmlFor="select">O que deseja fazer?</label>
