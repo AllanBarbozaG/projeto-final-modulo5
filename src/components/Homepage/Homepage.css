@@ -1,0 +1,35 @@
+.entidadesDiv {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 6rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.homepageDivs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18rem;
+  height: 10rem;
+  background-color: burlywood;
+  flex-shrink: 1;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 6px 6px 0px burlywood;
+}
+
+.homepageDivs:last-child {
+  margin-bottom: 0;
+}
+
+.homepageDivs:active {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0rem;
+  box-shadow: 10px 10px 10px white;
+}
