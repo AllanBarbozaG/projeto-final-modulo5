@@ -7,18 +7,18 @@ export function GetRequest() {
   });
 }
 
-export function PostRequest() {
+export function PostRequest(guestCpf, guestName, guestRoomNumber, guestPhoneNumber) {
 
-  let data = {
-    "cpf": "99999999959",
-    "nome": "Paçoquito da Silva",
-    "numeroQuarto": 300,
-    "telefone": "991237890"
+  const newGuest = {
+    "cpf": guestCpf,
+    "nome": guestName,
+    "numeroQuarto": guestRoomNumber,
+    "telefone": guestPhoneNumber
   }
 
   return fetch("http://localhost:3000/hospedes", {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify(newGuest),
     mode: "cors",
     headers: {
       'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ export function PutRequest() {
 
 export function DeleteRequest(cpf) {
 
-  return fetch(`http://localhost:3000/hospedes/99999999959`, {
+  return fetch(`http://localhost:3000/hospedes/46988780884`, {
     method: "DELETE",
     mode: "cors",
   }).then((response) => {
