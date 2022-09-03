@@ -1,24 +1,24 @@
 import Hospedes from "../Hospedes/Hospedes";
 import "./Homepage.css";
-import { useState } from 'react'
+import { useState } from "react";
 
 function Homepage() {
   const [paginaEntidade, setPaginaEntidade] = useState();
 
   function handleSetPage(pageName) {
-    setPaginaEntidade(pageName)
+    setPaginaEntidade(pageName);
   }
 
   return (
     <>
-      {paginaEntidade == 'hospedes' ? (
+      {paginaEntidade == "hospedes" ? (
         <Hospedes />
       ) : (
         <div className="entidadesDiv">
           <button
             className="homepageDivs"
             onClick={() => {
-             handleSetPage('hospedes')
+              handleSetPage("hospedes");
             }}
           >
             <p>Hospedes</p>

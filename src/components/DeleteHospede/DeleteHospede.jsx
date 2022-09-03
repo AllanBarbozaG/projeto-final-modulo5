@@ -1,5 +1,5 @@
 import { DeleteRequest } from "../../service/requestHospedes";
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 function DeleteHospede() {
   useEffect(() => {
