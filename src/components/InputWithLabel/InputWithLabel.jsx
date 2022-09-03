@@ -1,8 +1,9 @@
-function InputwithLabel({htmlFor, labelText, inputName}) {
+function InputwithLabel({htmlFor, labelText, inputName, callback}) {
   return (
     <>
       <label htmlFor={ htmlFor }> { labelText } </label><br />
-      <input name={ inputName } type="text" />
+      <input onChange={callback} name={ inputName } type="text" />
+      <br />
     </>
   )
 }
