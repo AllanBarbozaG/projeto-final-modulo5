@@ -16,7 +16,7 @@ function Sidebar() {
                     <Link to="/" className={style.links}><img src="./hospedes.png" /> Hóspedes</Link>
                     <Link to="/" className={style.links}><img src="./funcionarios.png" />Funcionários</Link>
                     <Link to="/" className={style.links}><img src="./limpeza.png" />Controle de Limpezas </Link>
-                    <Link to="/" className={style.links}><img src="./join.png" />Entrar </Link>
+                    <Link to="/" className={style.links}><img src="./login.png" />Entrar </Link>
                 </nav>
             </div>
             <footer className={style.footer}>
