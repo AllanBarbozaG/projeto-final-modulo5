@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Limpezas() {
+function Limpezas() {
     return (
         <div>
             Limpezas
@@ -8,3 +8,4 @@ export function Limpezas() {
     )
 }
 
+export default Limpezas
