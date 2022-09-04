@@ -9,7 +9,7 @@ function Navbar({ isAuthenticated }) {
                 <h1>Full Stack Hoteis S.A</h1>
             </div>
             <div className={style.action}>
-                {isAuthenticated ? <p>teste</p> : <img src="./login.png" alt="" />}
+                {isAuthenticated ? <p>teste</p> : <img src="./join.png" alt="" />}
 
             </div>
         </header >
