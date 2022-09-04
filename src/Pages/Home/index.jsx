@@ -3,7 +3,7 @@ import "./Home.css"
 function Home() {
     return (
         <div class="animation">
-            <h1>AGUARDANDO LOGIN</h1><br />
+            <h1>AGUARDANDO LOGIN...</h1><br />
             <p class="circle">
                 <span class="ouro">
                     <span class="left"><span class="anim"></span></span>
