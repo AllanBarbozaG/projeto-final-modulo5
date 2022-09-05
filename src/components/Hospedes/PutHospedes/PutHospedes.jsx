@@ -1,5 +1,5 @@
 import { PutRequest } from "../../../service/requestHospedes";
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import InputwithLabel from "../../InputWithLabel/InputWithLabel";
 
 function PutHospedes() {
@@ -10,7 +10,7 @@ function PutHospedes() {
   const [guestRoomNumber, setGuestRoomNumber] = useState(0);
   // console.log(typeof guestRoomNumber);
   const [guestPhoneNumber, setGuestPhoneNumber] = useState("");
-  console.log(guestPhoneNumber)
+  console.log(guestPhoneNumber);
   // console.log(guestPhoneNumber)
   const [sendRequest, setSendRequest] = useState(false);
   const [requestResponse, setResquestResponse] = useState({});
@@ -52,7 +52,7 @@ function PutHospedes() {
           type="number"
           callback={(e) => {
             console.log("AQUIPORRA " + typeof Number(e.target.value));
-            console.log(e.target.value)
+            console.log(e.target.value);
             const number = Number(e.target.value);
             setGuestRoomNumber(number);
           }}
@@ -75,7 +75,7 @@ function PutHospedes() {
         </button>
       </form>
       <br />
-
+      {console.log("requestResponse: " + requestResponse)}
       {/* Treating server responses */}
       {requestResponse ==
       "SQLITE_CONSTRAINT: UNIQUE constraint failed: hospedes.cpf" ? (
@@ -84,15 +84,12 @@ function PutHospedes() {
           hospede ativo.
         </h3>
       ) : typeof requestResponse == "object" ? (
-        <h3>{requestResponse.Mensagem}</h3>
+        <h3>{requestResponse.Mensagem || requestResponse.message}</h3>
       ) : (
         <h3>{requestResponse}</h3>
       )}
     </>
-
-    
-  )
-  
+  );
 }
 
-export default PutHospedes
+export default PutHospedes;

@@ -49,7 +49,7 @@ export function PutRequest(guestCpf, guestName, guestRoomNumber, guestPhoneNumbe
 
 export function DeleteRequest(cpf) {
 
-  return fetch(`http://localhost:3000/hospedes/46988780884`, {
+  return fetch(`http://localhost:3000/hospedes/${cpf}`, {
     method: "DELETE",
     mode: "cors",
   }).then((response) => {
