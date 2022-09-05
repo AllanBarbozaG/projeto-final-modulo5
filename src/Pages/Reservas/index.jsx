@@ -11,7 +11,7 @@ function Reservas() {
             </div>
             <div className={style.search}>
                 <button type="button" className={style.buttonCreate}>Adicionar reserva</button>
-                <input type={"text"} placeholder="Buscar" />
+                <input type={"text"} placeholder="Buscar CPF" />
             </div>
 
 
