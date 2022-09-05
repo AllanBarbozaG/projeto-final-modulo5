@@ -8,7 +8,6 @@ import Funcionarios from "./Pages/Funcionarios"
 import Limpezas from "./Pages/Limpezas"
 import Login from "./Pages/Login"
 import Layout from "./components/Layout"
-import Login from "./Pages/Login"
 import style from "./App.module.css"
 
 function App() {
