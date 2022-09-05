@@ -24,12 +24,27 @@
     line-height: 64px;
     width: 270px;
     color: black;
+    display: flex;
+    text-align: center;
 }
 
-.action {}
+.iconsOn {
+    display: flex;
+    margin-right: 100px;
+    gap: 40px;
+}
 
-.action>img {
+.iconsOn>img {
     width: 40px;
     height: 40px;
-    margin-right: 100px;
+}
+
+.teste {
+    display: flex;
+    flex-direction: column;
+}
+
+.teste>img {
+    width: 40px;
+    height: 40px;
 }
