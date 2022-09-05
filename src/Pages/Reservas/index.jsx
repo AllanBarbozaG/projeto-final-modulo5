@@ -10,42 +10,111 @@ function Reservas() {
                 <div className={style.checkout}>Hóspedes saindo</div>
             </div>
             <div className={style.search}>
+                <button type="button" className={style.buttonCreate}>Adicionar reserva</button>
                 <input type={"text"} placeholder="Buscar" />
             </div>
-            <div className={style.boxReservation}>
-                <span>Reservas</span>
+
+
+            <div className={style.containerTable}>
+                <table className={style.table}>
+                    <thead className={style.thead}>
+                        <tr>
+                            <th scope="col" className={style.th}>
+                                CPF Hóspede
+                            </th>
+                            <th scope="col" className={style.th}>
+                                Nome Hóspede
+                            </th>
+                            <th scope="col" className={style.th}>
+                                número quarto
+                            </th>
+                            <th scope="col" className={style.th}>
+                                Check-in
+                            </th>
+                            <th scope="col" className={style.th}>
+                                check-out
+                            </th>
+                            <th scope="col" className={style.th}>
+                                ação
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr className={style.body}>
+                            <td scope="row" className={style.linhas}>
+                                11111111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                ramom ferraz
+                            </td>
+                            <td ClassName={style.linhas}>
+                                11111111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                11111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                111111111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                <div className={style.icons}>
+                                    <img src="./view.png" />
+                                    <img src="./lapis.png" />
+                                    <img src="./lixeira.png" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr className={style.body}>
+                            <td scope="row" className={style.linhas}>
+                                11111111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                ramom ferraz
+                            </td>
+                            <td ClassName={style.linhas}>
+                                11111111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                11111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                111111111111
+                            </td>
+                            <div className={style.icons}>
+                                <img src="./view.png" />
+                                <img src="./lapis.png" />
+                                <img src="./lixeira.png" />
+                            </div>
+                        </tr>
+                        <tr className={style.body}>
+                            <td scope="row" className={style.linhas}>
+                                11111111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                ramom ferraz
+                            </td>
+                            <td ClassName={style.linhas}>
+                                11111111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                11111111
+                            </td>
+                            <td ClassName={style.linhas}>
+                                111111111111
+                            </td>
+                            <div className={style.icons}>
+                                <img src="./view.png" />
+                                <img src="./lapis.png" />
+                                <img src="./lixeira.png" />
+                            </div>
+                        </tr>
+
+
+                    </tbody>
+                </table>
             </div>
-            <table className={style.table}>
-                <tr className={style.colunas}>
-                    <th>CPF Hóspede</th>
-                    <th>Número Quarto</th>
-                    <th>Check-in</th>
-                    <th>Check-out</th>
-                    <th>Ação</th>
-                </tr>
-                <tr className={style.linhas}>
-                    <td>11111111111</td>
-                    <td>Ramom Ferraz</td>
-                    <td>02/02/2022</td>
-                    <td>05/02/2022</td>
-                    <td>X</td>
-                </tr>
-                <tr>
-                    <td>11111111111</td>
-                    <td>Ramom Ferraz</td>
-                    <td>02/02/2022</td>
-                    <td>05/02/2022</td>
-                    <td>X</td>
-                </tr>
-                <tr>
-                    <td>11111111111</td>
-                    <td>Ramom Ferraz</td>
-                    <td>02/02/2022</td>
-                    <td>05/02/2022</td>
-                    <td>X</td>
-                </tr>
-            </table >
-        </div>
+
+        </div >
     )
 }
 
