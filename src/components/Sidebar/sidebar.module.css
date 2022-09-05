@@ -26,7 +26,7 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
     margin-left: 8px;
 }
 
@@ -35,7 +35,7 @@
     align-items: center;
     text-decoration: none;
     color: black;
-    gap: 5px;
+    gap: 8px;
     font-weight: 500;
     font-size: 12px;
     line-height: 28px;
