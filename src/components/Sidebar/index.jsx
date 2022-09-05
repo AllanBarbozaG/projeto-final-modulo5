@@ -14,7 +14,7 @@ function Sidebar() {
                     <Link to="/quartos" className={style.links}><img src="./quartos.png" />Quartos</Link>
                     <Link to="/hospedes" className={style.links}><img src="./hospedes.png" /> Hóspedes</Link>
                     <Link to="/funcionarios" className={style.links}><img src="./funcionarios.png" />Funcionários</Link>
-                    <Link to="/limpeza" className={style.links}><img src="./limpeza.png" />Controle de Limpezas </Link>
+                    <Link to="/limpezas" className={style.links}><img src="./limpeza.png" />Controle de Limpezas </Link>
                     <Link to="/login" className={style.links}><img src="./join.png" />Sair</Link>
                 </nav>
             </div>
