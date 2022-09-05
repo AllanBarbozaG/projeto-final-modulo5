@@ -28,18 +28,18 @@ export function PostRequest(guestCpf, guestName, guestRoomNumber, guestPhoneNumb
   )
 }
 
-export function PutRequest() {
+export function PutRequest(guestCpf, guestName, guestRoomNumber, guestPhoneNumber) {
 
-  let data = {
-    "cpf": "99999999959",
-    "nome": "Paçoquito da Silva Junior",
-    "numeroQuarto": 350,
-    "telefone": "991237822"
+  const newGuest = {
+    "cpf": guestCpf,
+    "nome": guestName,
+    "numeroQuarto": Number(guestRoomNumber),
+    "telefone": guestPhoneNumber
   }
 
-  return fetch(`http://localhost:3000/hospedes/99999999959`, {
+  return fetch(`http://localhost:3000/hospedes/${guestCpf}`, {
     method: "PUT",
-    body: JSON.stringify(data),
+    body: JSON.stringify(newGuest),
     mode: "cors",
     headers: {
       'Content-Type': 'application/json'

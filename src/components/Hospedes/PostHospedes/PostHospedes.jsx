@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { PostRequest } from "../../service/requestHospedes";
-import InputwithLabel from "../InputWithLabel/InputWithLabel";
+import { PostRequest } from "../../../service/requestHospedes";
+import InputwithLabel from "../../InputWithLabel/InputWithLabel";
 
 function PostHospedes() {
   const [guestCpf, setGuestCpf] = useState();
