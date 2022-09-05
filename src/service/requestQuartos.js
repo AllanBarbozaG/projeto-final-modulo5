@@ -1,5 +1,5 @@
 class RequestQuarto {
-  get() {
+  showQuartos() {
     return fetch("http://localhost:3000/quartos", {
       method: "GET",
       mode: "cors",
@@ -8,7 +8,7 @@ class RequestQuarto {
     });
   }
 
-  post(numeroQuarto, nomeHospedes, controle, telefone) {
+  createQuarto(numeroQuarto, nomeHospedes, controle, telefone) {
     const quest = {
       numeroQuarto: numeroQuarto,
       nomeHospedes: nomeHospedes,
@@ -26,7 +26,7 @@ class RequestQuarto {
     }).then((response) => response.json());
   }
 
-  put(id, numeroQuarto, nomeHospedes, controle, telefone) {
+  updateQuarto(id, numeroQuarto, nomeHospedes, controle, telefone) {
     const quest = {
       numeroQuarto: numeroQuarto,
       nomeHospedes: nomeHospedes,
@@ -41,10 +41,10 @@ class RequestQuarto {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((response) => response.json());
+    }).then((response) => response.json().catch);
   }
 
-  delete(id) {
+  deleteQuarto(id) {
     return fetch(`http://localhost:3000/quartos/${id}`, {
       method: "DELETE",
       mode: "cors",

@@ -7,7 +7,7 @@ function GetQuarto(){
     const [countGuests, setCountGuests] = useState(0);
   
     useEffect(() => {
-      RequestQuarto.get().then((data) => {
+      RequestQuarto.showQuartos().then((data) => {
         setHospedes(data);
       });
     }, [])
@@ -20,7 +20,7 @@ function GetQuarto(){
               return (
                 <div key={index}>
                   <p>
-                    {quarto.numeroQuarto} {quartos.nomeHospede}{" "}
+                    {quarto.numeroQuarto} {quarto.nomeHospede}{" "}
                   </p>
                 </div>
               );
