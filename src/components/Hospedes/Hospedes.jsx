@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import { useState } from "react";
-import DeleteHospede from "../DeleteHospede/DeleteHospede";
-import GetHospedes from "../GetHospedes/GetHospedes";
-import PostHospedes from "../PostHospedes/PostHospedes";
-import PutHospedes from "../PutHospedes/PutHospedes";
+import DeleteHospede from "./DeleteHospede/DeleteHospede";
+import GetHospedes from "./GetHospedes/GetHospedes";
+import PostHospedes from "./PostHospedes/PostHospedes";
+import PutHospedes from "./PutHospedes/PutHospedes";
+ 
 
 function Hospedes() {
   const [methodForm, setMethodForm] = useState();
