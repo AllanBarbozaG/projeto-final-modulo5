@@ -48,52 +48,84 @@
     display: flex;
     align-items: center;
     padding: 10px 20px;
-    width: 226px;
-    height: 35px;
-    border-radius: 8px;
-    background-color: white;
-    margin: 0 0 30px 46px;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .search>input {
     display: flex;
     width: 255px;
     height: 35px;
-    border: none
+    border: none;
+    border-radius: 8px;
+}
+
+.buttonCreate {
+    color: #111827;
+    background-color: white;
+    border: 1px solid rgb(191, 187, 187);
+    font-weight: 400px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 20px;
+    margin-right: 200px;
+}
+
+.buttonCreate:focus {
+    outline: none;
+}
+
+.buttonCreate:hover {
+    background-color: #f3f4f6;
+}
+
+.containerTable {
+    overflow-x: auto;
+    position: relative;
 }
 
 .table {
-    width: 45%;
-    margin-left: 46px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    color: #6b7280;
+}
+
+.thead {
+    font-size: 12px;
+    line-height: 16px;
+    color: #374151;
+    text-transform: uppercase;
+    background-color: #f9fafb;
+}
+
+.th {
+    padding: 12px 24px;
+}
+
+.body {
     background-color: white;
-    border-radius: 12px 12px 12px 12px;
-    color: #666666;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
+    border-bottom-width: 1px;
 }
 
-th,
-td {
-    border-bottom: 1px solid rgba(102, 102, 102, 0.2);
-}
-
-
-.boxReservation {
+.linhas {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 46px;
-    padding: 4px 24px;
-    gap: 10px;
-    width: 152px;
-    height: 28px;
-    background: #FFFFFF;
-    border-radius: 12px 12px 0px 0px;
+    padding: 16px 24px;
+    gap: 60px;
 }
 
-.boxReservation>span {
-    font-weight: 600;
-    font-size: 12px;
-    color: #666666
+td>img {
+    width: 15px;
+}
+
+.icons {
+    display: flex;
+    margin-left: 15px;
+    gap: 15px
+}
+
+.icons>img {
+    width: 15px;
 }
