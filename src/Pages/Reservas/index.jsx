@@ -44,76 +44,27 @@ function Reservas() {
                             <td scope="row" className={style.linhas}>
                                 11111111111
                             </td>
-                            <td ClassName={style.linhas}>
-                                ramom ferraz
+                            <td className={style.linhas}>
+                                1111111111111
                             </td>
-                            <td ClassName={style.linhas}>
+                            <td className={style.linhas}>
                                 11111111111
                             </td>
-                            <td ClassName={style.linhas}>
+                            <td className={style.linhas}>
                                 11111111
                             </td>
-                            <td ClassName={style.linhas}>
+                            <td className={style.linhas}>
                                 111111111111
                             </td>
-                            <td ClassName={style.linhas}>
-                                <div className={style.icons}>
-                                    <img src="./view.png" />
-                                    <img src="./lapis.png" />
-                                    <img src="./lixeira.png" />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr className={style.body}>
-                            <td scope="row" className={style.linhas}>
-                                11111111111
-                            </td>
-                            <td ClassName={style.linhas}>
-                                ramom ferraz
-                            </td>
-                            <td ClassName={style.linhas}>
-                                11111111111
-                            </td>
-                            <td ClassName={style.linhas}>
-                                11111111
-                            </td>
-                            <td ClassName={style.linhas}>
-                                111111111111
-                            </td>
-                            <div className={style.icons}>
+                            <td className={style.icons}>
                                 <img src="./view.png" />
                                 <img src="./lapis.png" />
                                 <img src="./lixeira.png" />
-                            </div>
+                            </td>
                         </tr>
-                        <tr className={style.body}>
-                            <td scope="row" className={style.linhas}>
-                                11111111111
-                            </td>
-                            <td ClassName={style.linhas}>
-                                ramom ferraz
-                            </td>
-                            <td ClassName={style.linhas}>
-                                11111111111
-                            </td>
-                            <td ClassName={style.linhas}>
-                                11111111
-                            </td>
-                            <td ClassName={style.linhas}>
-                                111111111111
-                            </td>
-                            <div className={style.icons}>
-                                <img src="./view.png" />
-                                <img src="./lapis.png" />
-                                <img src="./lixeira.png" />
-                            </div>
-                        </tr>
-
-
                     </tbody>
                 </table>
             </div>
-
         </div >
     )
 }
