@@ -8,17 +8,17 @@ export function GetFuncionario() {
   });
 }
 
-export function PostFuncionario() {
+export function PostFuncionario(employeeName, admissionDate) {
 
-    let data = {
+    const newEmployee = {
 
-        nome: "José Marcos",
-        data_admissao: "01/02/22",
+        "nome": employeeName,
+        "data_admissao": admissionDate,
     }
 
   return fetch("http://localhost:3000/funcionario", {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify(newEmployee),
     mode: "cors",
     headers: {
       'Content-Type': 'application/json'
@@ -28,17 +28,17 @@ export function PostFuncionario() {
   )
 }
 
-export function PutFuncionario() {
+export function PutFuncionario(employeeId, employeeName, admissionDate) {
 
-    let data = {
+    const newEmployee = {
 
-        nome: "José Marcos Junior",
-        data_admissao: "01/02/22"
+        "nome": employeeName,
+        "data_admissao": admissionDate
     }
 
-  return fetch(`http://localhost:3000/funcionario/1`, {
+  return fetch(`http://localhost:3000/funcionario/${employeeId}`, {
     method: "PUT",
-    body: JSON.stringify(data),
+    body: JSON.stringify(newEmployee),
     mode: "cors",
     headers: {
       'Content-Type': 'application/json'
@@ -46,8 +46,8 @@ export function PutFuncionario() {
   }).then(response => response.json())
 }
 
-export function DeleteFuncionario() { 
-  return fetch(`http://localhost:3000/funcionario/1`, {
+export function DeleteFuncionario(employeeId) { 
+  return fetch(`http://localhost:3000/funcionario/${employeeId}`, {
     method: "DELETE",
     mode: "cors",
   }).then((response) => {
