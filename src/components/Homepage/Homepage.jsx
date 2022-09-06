@@ -1,6 +1,6 @@
 import Hospedes from "../Hospedes/Hospedes";
 import "./Homepage.css";
-import { useState } from 'react'
+import { useState } from "react";
 
 import Funcionarios from "../Funcionarios/Funcionarios.jsx";
 
@@ -8,12 +8,12 @@ function Homepage() {
   const [paginaEntidade, setPaginaEntidade] = useState();
 
   function handleSetPage(pageName) {
-    setPaginaEntidade(pageName)
+    setPaginaEntidade(pageName);
   }
 
   return (
     <>
-      {paginaEntidade == 'hospedes' ? (
+      {paginaEntidade == "hospedes" ? (
         <Hospedes />
       ) : paginaEntidade == 'funcionarios' ? (
         <Funcionarios />
@@ -23,7 +23,7 @@ function Homepage() {
           <button
             className="homepageDivs"
             onClick={() => {
-             handleSetPage('hospedes')
+              handleSetPage("hospedes");
             }}
           >
             <p>Hospedes</p>

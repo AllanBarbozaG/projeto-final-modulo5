@@ -1,0 +1,131 @@
+.title {
+    display: flex;
+    gap: 20px;
+}
+
+.title>h2 {
+    margin: 15px 226px 73px 40px;
+}
+
+.reservation {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 8px;
+    width: 159px;
+    height: 42px;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #FFFFFF;
+}
+
+.checkin {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 8px;
+    width: 179px;
+    height: 42px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    font-size: 14px;
+    ;
+}
+
+.checkout {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 8px;
+    width: 160px;
+    height: 42px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.search>input {
+    display: flex;
+    width: 255px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+}
+
+.buttonCreate {
+    color: #111827;
+    background-color: white;
+    border: 1px solid rgb(191, 187, 187);
+    font-weight: 400px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 20px;
+    margin-right: 200px;
+}
+
+.buttonCreate:focus {
+    outline: none;
+}
+
+.buttonCreate:hover {
+    background-color: #f3f4f6;
+}
+
+.containerTable {
+    overflow-x: auto;
+    position: relative;
+}
+
+.table {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    color: #6b7280;
+}
+
+.thead {
+    font-size: 12px;
+    line-height: 16px;
+    color: #374151;
+    text-transform: uppercase;
+    background-color: #f9fafb;
+}
+
+.th {
+    padding: 12px 24px;
+}
+
+.body {
+    background-color: white;
+    border-bottom-width: 1px;
+}
+
+.linhas {
+    display: flex;
+    padding: 16px 24px;
+    gap: 60px;
+}
+
+td>img {
+    width: 15px;
+}
+
+.icons {
+    display: flex;
+    margin-left: 15px;
+    gap: 15px
+}
+
+.icons>img {
+    width: 15px;
+}
