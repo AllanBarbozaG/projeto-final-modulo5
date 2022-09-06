@@ -1,13 +1,14 @@
-# GetRoom App
+# Full Stack Hotéis
 
 
 
 <div align='center'> 
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
 </div>
 
-### App para serviços de hospedagem desenvolvido em React, utilizando API Rest para execução do CRUD e a estrutura de organização MVC. Tem como finalidade a consulta, armazenamento e gerenciamento de informações.
+### App para serviços de hospedagem desenvolvido em React, utilizando API Rest para execução do CRUD e a estrutura de organização MVC. Tem como finalidade a consulta e gerenciamento de informações.
 
 ## 🚀 Tecnologias utilizadas
 
@@ -18,6 +19,18 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [Node.JS](https://nodejs.org/en/)
 - [Express](http://expressjs.com/pt-br/)
 - [SQLite](https://www.sqlite.org/index.html)
+
+## 🎫 Como instalar:
+
+Clone o projeto
+
+```bash
+https://github.com/AllanBarbozaG/projeto-final-modulo5.git
+
+```
+
+
+
 
 
 
