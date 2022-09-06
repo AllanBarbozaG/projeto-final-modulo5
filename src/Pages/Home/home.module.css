@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3em;
+}
+
+.welcome {
+    font-size: 4em;
+    margin-top: 0em;
+}
+
+.text1 {
+    font-size: 2em;
+}
+
+.text2 {
+    font-size: 2em;
+}
