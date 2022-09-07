@@ -1,15 +1,13 @@
-
+import { useEffect } from "react";
 import { useState } from "react";
 
-import  GetFuncionarios  from "../../components/Funcionarios/GetFuncionarios/GetFuncionarios";
-import  PostFuncionarios  from "../../components/Funcionarios/PostFuncionarios/PostFuncionarios";
-import  DeleteFuncionarios  from "../../components/Funcionarios/DeleteFuncionarios/DeleteFuncionarios";
-import  PutFuncionarios from "../../components/Funcionarios/PutFuncionarios/PutFuncionarios";
-
+import  GetFuncionarios  from "./GetFuncionarios/GetFuncionarios";
+import  PostFuncionarios  from "./PostFuncionarios/PostFuncionarios";
+import  DeleteFuncionarios  from "./DeleteFuncionarios/DeleteFuncionarios";
+import  PutFuncionarios from "./PutFuncionarios/PutFuncionarios";
 
 function Funcionarios() {
     const [methodForm, setMethodForm] = useState();
-    
     
     return (
         <>
@@ -36,9 +34,7 @@ function Funcionarios() {
             <option value="put">Atualizar dados de funcionários</option>
             <option value="delete">Deletar registro de funcionários</option>
             </select>
-            
             </>
-
         )}
         </>
     );

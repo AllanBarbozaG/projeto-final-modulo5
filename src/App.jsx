@@ -5,7 +5,7 @@ import Reservas from "./Pages/Reservas/"
 import NovaReserva from "./Pages/Reservas/novaReserva"
 import Quartos from "./Pages/Quartos/"
 import Hospedes from "/src/components/Hospedes/Hospedes"
-import Funcionarios from "./Pages/Funcionarios"
+import Funcionarios from "./Pages/Funcionarios/index";
 import Limpezas from "./Pages/Limpezas"
 import Login from "./Pages/Login"
 import Layout from "./components/Layout"
