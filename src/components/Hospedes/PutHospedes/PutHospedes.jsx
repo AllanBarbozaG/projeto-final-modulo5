@@ -40,9 +40,7 @@ function PutHospedes() {
     });
   }, []);
 
-      });
-    });
-  }, [guestCpf]);
+ 
 
 
   return (
