@@ -1,4 +1,4 @@
-import { PutRequest } from "../../../service/requestHospedes";
+import { GetRequest, PutRequest } from "../../../service/requestHospedes";
 import { useEffect, useState } from "react";
 import InputwithLabel from "../../InputWithLabel/InputWithLabel";
 
@@ -28,6 +28,18 @@ function PutHospedes() {
     }
   }, [sendRequest]);
 
+  useEffect(() => {
+    GetRequest().then((data) => {
+      data.map((hospede) => {
+        if (hospede.cpf == guestCpf) {
+          setGuestName(hospede.nome);
+          setGuestPhoneNumber(hospede.telefone);
+          setGuestRoomNumber(hospede.numeroQuarto);
+        }
+      });
+    });
+  }, [guestCpf]);
+
   return (
     <>
       <form action="send">
@@ -43,6 +55,7 @@ function PutHospedes() {
           labelText="Nome:"
           inputName="guestName"
           type="text"
+          value={guestName}
           callback={(e) => setGuestName(e.target.value)}
         />
         <InputwithLabel
@@ -50,6 +63,7 @@ function PutHospedes() {
           labelText="Número do quarto:"
           inputName="guestRoomNumber"
           type="number"
+          value={guestRoomNumber}
           callback={(e) => {
             console.log("AQUIPORRA " + typeof Number(e.target.value));
             console.log(e.target.value);
@@ -62,6 +76,7 @@ function PutHospedes() {
           labelText="Telefone/Celular:"
           inputName="guestPhoneNumber"
           type="text"
+          value={guestPhoneNumber}
           callback={(e) => setGuestPhoneNumber(e.target.value)}
         />
         <button

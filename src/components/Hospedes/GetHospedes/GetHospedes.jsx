@@ -9,17 +9,24 @@ function GetHospedes() {
   const [countGuests, setCountGuests] = useState(0);
   console.log(hospedes);
   console.log(showGuests);
+  const [loadingReqData, setLoadingReqData] = useState(true)
 
   useEffect(() => {
     GetRequest().then((data) => {
       setHospedes(data);
+      setLoadingReqData(false)
     });
-  }, []);  
+  }, [loadingReqData]);  
 
   return (
     <>
-      {
-        showGuests && 
+      { loadingReqData ? (
+        <>
+        <div>CARREGANDO...</div>
+        {console.log('carregando')}
+        </>
+      ) : 
+        
         hospedes.map((hospede, index) => {
           return (
             <div key={index}>
@@ -28,7 +35,7 @@ function GetHospedes() {
               </p>
             </div>
           );
-        })}
+        }) } : 
     </>
   );
 }
