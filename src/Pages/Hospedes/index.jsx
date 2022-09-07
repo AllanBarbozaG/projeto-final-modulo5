@@ -6,6 +6,7 @@ import style from "./Hospedes.module.css";
 function Hospedes() {
   const [hospedes, setHospedes] = useState([]);
   const [loadingReqData, setLoadingReqData] = useState(true);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,12 +16,13 @@ function Hospedes() {
     });
   }, [loadingReqData]);
 
-  function handleSetPage() {
-    navigate("/addhospede");
+  function handleSetPage(page) {
+    navigate(page);
   }
 
   return (
     <>
+    {/* Mensagem de carregando */}
       {loadingReqData ? (
         <>
           <div>CARREGANDO...</div>
@@ -37,7 +39,7 @@ function Hospedes() {
           <div className={style.search}>
             <button
               type="button"
-              onClick={handleSetPage}
+              onClick={() => handleSetPage("/addhospede")}
               className={style.buttonCreate}
             >
               Adicionar Hospede
@@ -80,7 +82,12 @@ function Hospedes() {
 
                       <td className={style.icons}>
                         <img src="./view.png" />
-                        <img src="./lapis.png" />
+                        <img
+                          src="./lapis.png"
+                          onClick={(e) => {
+                            navigate("/updatehospede");
+                          }}
+                        />
                         <img src="./lixeira.png" />
                       </td>
                     </tr>
