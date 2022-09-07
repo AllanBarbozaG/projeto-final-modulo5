@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PutFuncionario } from "../../../service/requestFuncionarios";
+import { GetFuncionario } from "../../../service/requestFuncionarios";
 
 import InputwithLabel from "../../InputWithLabel/InputWithLabel";
 
@@ -28,6 +29,17 @@ const [employeeId, setEmployeeId] = useState("")
       .catch((error) => console.log(error + "deu erro"));
     }
   }, [sendRequest]);
+
+  useEffect(() => {
+    GetFuncionario().then((data) => {
+      data.map((funcionario) => {
+
+        setEmployeeId(funcionario.id);
+        setEmployeeName(funcionario.nome);
+        setAdmissionDate(funcionario.data_admissao);
+      });
+    });
+  }, []);
 
   return (
     <>
