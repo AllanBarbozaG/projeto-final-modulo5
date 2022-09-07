@@ -12,6 +12,9 @@ import Layout from "./components/Layout"
 import style from "./App.module.css"
 import PostHospedes from './components/Hospedes/PostHospedes/PostHospedes'
 import PutHospedes from "./components/Hospedes/PutHospedes/PutHospedes"
+import PostFuncionarios from "./components/Funcionarios/PostFuncionarios/PostFuncionarios"
+import PutFuncionarios from "./components/Funcionarios/PutFuncionarios/PutFuncionarios"
+import DeleteFuncionarios from "./components/Funcionarios/DeleteFuncionarios/DeleteFuncionarios"
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -31,6 +34,9 @@ function App() {
                 <Route path="/updatehospede" element={<PutHospedes />} />
                 <Route path="/funcionarios" element={<Funcionarios />} />
                 <Route path="/limpezas" element={<Limpezas />} />
+                <Route path="/addfuncionario" element={<PostFuncionarios />} />
+                <Route path="/updatefuncionario" element={<PutFuncionarios />} />
+                <Route path="/deletefuncionario" element={<DeleteFuncionarios />} />
               </Routes>
             </Layout>
           </BrowserRouter>
