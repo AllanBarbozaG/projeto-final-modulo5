@@ -3,10 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { GetRequest } from "../../service/requestHospedes";
 import style from "./Hospedes.module.css";
 
+export let guestCpfIndex = [];
+
 function Hospedes() {
   const [hospedes, setHospedes] = useState([]);
   const [loadingReqData, setLoadingReqData] = useState(true);
-  
+  const [guestCpf, setGuestCpf] = useState();
+  console.log(guestCpf);
+  console.log(guestCpfIndex);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,13 +20,17 @@ function Hospedes() {
     });
   }, [loadingReqData]);
 
+  useEffect(() => {
+    guestCpfIndex = [];
+  });
+
   function handleSetPage(page) {
     navigate(page);
   }
 
   return (
     <>
-    {/* Mensagem de carregando */}
+      {/* Mensagem de carregando */}
       {loadingReqData ? (
         <>
           <div>CARREGANDO...</div>
@@ -85,6 +93,13 @@ function Hospedes() {
                         <img
                           src="./lapis.png"
                           onClick={(e) => {
+                            setGuestCpf(hospede.cpf);
+                            if (guestCpfIndex.indexOf(hospede.cpf) == -1) {
+                              guestCpfIndex.push(hospede.cpf);
+                            } else {
+                              guestCpfIndex.slice(0, guestCpfIndex.length - 1);
+                            }
+
                             navigate("/updatehospede");
                           }}
                         />
