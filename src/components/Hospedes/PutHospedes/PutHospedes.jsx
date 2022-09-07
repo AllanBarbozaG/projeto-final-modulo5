@@ -31,6 +31,7 @@ function PutHospedes() {
   useEffect(() => {
     GetRequest().then((data) => {
       data.map((hospede) => {
+
         setGuestCpf(hospede.cpf);
         setGuestName(hospede.nome);
         setGuestPhoneNumber(hospede.telefone);
@@ -38,6 +39,11 @@ function PutHospedes() {
       });
     });
   }, []);
+
+      });
+    });
+  }, [guestCpf]);
+
 
   return (
     <>
