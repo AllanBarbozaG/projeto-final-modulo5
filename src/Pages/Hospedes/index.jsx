@@ -94,12 +94,7 @@ function Hospedes() {
                           src="./lapis.png"
                           onClick={(e) => {
                             setGuestCpf(hospede.cpf);
-                            if (guestCpfIndex.indexOf(hospede.cpf) == -1) {
-                              guestCpfIndex.push(hospede.cpf);
-                            } else {
-                              guestCpfIndex.slice(0, guestCpfIndex.length - 1);
-                            }
-
+                            guestCpfIndex.push(hospede.cpf);
                             navigate("/updatehospede");
                           }}
                         />
