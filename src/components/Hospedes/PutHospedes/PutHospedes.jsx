@@ -1,8 +1,10 @@
 import { GetRequest, PutRequest } from "../../../service/requestHospedes";
 import { useEffect, useState } from "react";
 import InputwithLabel from "../../InputWithLabel/InputWithLabel";
+import { guestCpfIndex } from "../../../Pages/Hospedes";
 
 function PutHospedes() {
+  console.log(guestCpfIndex);
   const [guestCpf, setGuestCpf] = useState();
   // console.log(guestCpf);
   const [guestName, setGuestName] = useState("");
@@ -31,19 +33,17 @@ function PutHospedes() {
   useEffect(() => {
     GetRequest().then((data) => {
       data.map((hospede) => {
-
-        setGuestCpf(hospede.cpf);
-        setGuestName(hospede.nome);
-        setGuestPhoneNumber(hospede.telefone);
-        setGuestRoomNumber(hospede.numeroQuarto);
+        guestCpfIndex.map((cpf) => {
+          if (hospede.cpf == cpf) {
+            setGuestCpf(hospede.cpf);
+            setGuestName(hospede.nome);
+            setGuestPhoneNumber(hospede.telefone);
+            setGuestRoomNumber(hospede.numeroQuarto);
+          }
+        });
       });
     });
   }, []);
-
-      });
-    });
-  }, [guestCpf]);
-
 
   return (
     <>
@@ -71,8 +71,6 @@ function PutHospedes() {
           type="number"
           value={guestRoomNumber}
           callback={(e) => {
-            console.log("AQUIPORRA " + typeof Number(e.target.value));
-            console.log(e.target.value);
             const number = Number(e.target.value);
             setGuestRoomNumber(number);
           }}
