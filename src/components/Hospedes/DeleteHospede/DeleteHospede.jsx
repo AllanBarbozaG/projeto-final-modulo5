@@ -1,9 +1,12 @@
 import { DeleteRequest } from "../../../service/requestHospedes.js";
 import { useEffect } from "react";
-import { guestCpfIndex } from "../../../Pages/Hospedes/index.jsx";
+import Hospedes, { guestCpfIndex } from "../../../Pages/Hospedes/index.jsx";
 import { deleteGuest } from "../../../Pages/Hospedes/index.jsx";
+import { useNavigate } from "react-router-dom";
 
 function DeleteHospede() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (deleteGuest) {
       DeleteRequest(guestCpfIndex)
@@ -12,7 +15,12 @@ function DeleteHospede() {
     }
   }, []);
 
-  return <h1>hospede deletado com sucesso</h1>;
+  return (
+    <>
+      <h1>Hóspede deletado com sucesso.</h1>
+      <button onClick={() => navigate("/hospedes")}>Voltar</button>
+    </>
+  );
 }
 
 export default DeleteHospede;

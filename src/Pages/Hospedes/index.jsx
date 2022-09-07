@@ -102,10 +102,16 @@ function Hospedes() {
                         <img
                           src="./lixeira.png"
                           onClick={(e) => {
-                            setGuestCpf(hospede.cpf);
-                            guestCpfIndex.push(hospede.cpf);
-                            deleteGuest = true;
-                            navigate("/deletehospede");
+                            e.preventDefault;
+                            const confirmation = confirm(
+                              "Tem certeza de que deseja excluir o registro deste hóspede?Não será possível recuperar os dados."
+                            );
+                            if (confirmation == true) {
+                              setGuestCpf(hospede.cpf);
+                              guestCpfIndex.push(hospede.cpf);
+                              deleteGuest = true;
+                              navigate("/deletehospede");
+                            }
                           }}
                         />
                       </td>
