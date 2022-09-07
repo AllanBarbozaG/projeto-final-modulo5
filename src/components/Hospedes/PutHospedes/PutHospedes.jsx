@@ -4,7 +4,7 @@ import InputwithLabel from "../../InputWithLabel/InputWithLabel";
 import { guestCpfIndex } from "../../../Pages/Hospedes";
 
 function PutHospedes() {
-  console.log(guestCpfIndex)
+  console.log(guestCpfIndex);
   const [guestCpf, setGuestCpf] = useState();
   // console.log(guestCpf);
   const [guestName, setGuestName] = useState("");
@@ -31,23 +31,17 @@ function PutHospedes() {
   }, [sendRequest]);
 
   useEffect(() => {
-    
     GetRequest().then((data) => {
       data.map((hospede) => {
         guestCpfIndex.map((cpf) => {
-          if(hospede.cpf == cpf) {
+          if (hospede.cpf == cpf) {
             setGuestCpf(hospede.cpf);
             setGuestName(hospede.nome);
             setGuestPhoneNumber(hospede.telefone);
             setGuestRoomNumber(hospede.numeroQuarto);
-  
           }
-
-        })
-       
-       
+        });
       });
-     
     });
   }, []);
 
