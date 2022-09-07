@@ -4,6 +4,7 @@ import { GetRequest } from "../../service/requestHospedes";
 import style from "./Hospedes.module.css";
 
 export let guestCpfIndex = [];
+export let deleteGuest = false;
 
 function Hospedes() {
   const [hospedes, setHospedes] = useState([]);
@@ -98,7 +99,15 @@ function Hospedes() {
                             navigate("/updatehospede");
                           }}
                         />
-                        <img src="./lixeira.png" />
+                        <img
+                          src="./lixeira.png"
+                          onClick={(e) => {
+                            setGuestCpf(hospede.cpf);
+                            guestCpfIndex.push(hospede.cpf);
+                            deleteGuest = true;
+                            navigate("/deletehospede");
+                          }}
+                        />
                       </td>
                     </tr>
                   );

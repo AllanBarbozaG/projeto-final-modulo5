@@ -1,31 +1,18 @@
 import { DeleteRequest } from "../../../service/requestHospedes.js";
-import { useEffect, useState } from "react";
-import InputwithLabel from "../../InputWithLabel/InputWithLabel.jsx";
-
+import { useEffect } from "react";
+import { guestCpfIndex } from "../../../Pages/Hospedes/index.jsx";
+import { deleteGuest } from "../../../Pages/Hospedes/index.jsx";
 
 function DeleteHospede() {
-  const [guestCpf, setGuestCpf] = useState()
-  const [deleteGuest, setDeleteGuest] = useState(false)
-
   useEffect(() => {
-    setDeleteGuest(false)
-    DeleteRequest(guestCpf)
-      .then((json) => console.log(json))
-      .catch((error) => console.log(error + "deu erro"));
-  }, [deleteGuest]);
+    if (deleteGuest) {
+      DeleteRequest(guestCpfIndex)
+        .then((json) => console.log(json))
+        .catch((error) => console.log(error + "deu erro"));
+    }
+  }, []);
 
-  return (
-    <>
-      <InputwithLabel
-          htmlFor="guestCpf"
-          labelText="CPF:"
-          inputName="guestCpf"
-          type="text"
-          callback={(e) => setGuestCpf(e.target.value)} />
-
-          <button onClick={() => setDeleteGuest(true)}>Excluir registro de hóspede</button>
-    </>
-  )
+  return <h1>hospede deletado com sucesso</h1>;
 }
 
 export default DeleteHospede;
