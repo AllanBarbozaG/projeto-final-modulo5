@@ -42,7 +42,7 @@ function PostHospedes() {
             className={style.inputsForm}
             value={guestCpf}
             onChange={(e) => {
-               setGuestCpf(e.target.value)
+              setGuestCpf(e.target.value);
             }}
             placeholder="Ex: 000-000-000"
             required
@@ -59,7 +59,7 @@ function PostHospedes() {
             className={style.inputsForm}
             value={guestName}
             onChange={(e) => setGuestName(e.target.value)}
-            placeholder="Digite seu nome "
+            placeholder="Digite nome do hóspede"
             required
           />
         </div>
@@ -68,7 +68,7 @@ function PostHospedes() {
             Número do quarto
           </label>
           <input
-            type="number"
+            type="text"
             name="numQuarto"
             id="numQuarto"
             className={style.inputsForm}
@@ -90,21 +90,24 @@ function PostHospedes() {
               className={style.inputsForm}
               value={guestPhoneNumber}
               onChange={(e) => setGuestPhoneNumber(e.target.value)}
+              placeholder="Digite o numero de telefone"
               required
             />
           </div>
-         
         </div>
-    
-        <button
-          type="submit"
-          onClick={(e) => {
-            e.preventDefault();
-            setSendRequest(true);
-          }}
-        >
-          Cadastrar Hospede
-        </button>
+
+        <div className={style.containerButton}>
+          <button
+            className={style.button}
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              setSendRequest(true);
+            }}
+          >
+            Cadastrar Hospede
+          </button>
+        </div>
       </form>
       <br />
 
