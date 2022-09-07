@@ -11,6 +11,7 @@ import Login from "./Pages/Login"
 import Layout from "./components/Layout"
 import style from "./App.module.css"
 import PostHospedes from './components/Hospedes/PostHospedes/PostHospedes'
+import PutHospedes from "./components/Hospedes/PutHospedes/PutHospedes"
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/quartos" element={<Quartos />} />
                 <Route path="/hospedes" element={<Hospedes />} />
                 <Route path="/addhospede" element={<PostHospedes />} />
+                <Route path="/updatehospede" element={<PutHospedes />} />
                 <Route path="/funcionarios" element={<Funcionarios />} />
                 <Route path="/limpezas" element={<Limpezas />} />
               </Routes>
