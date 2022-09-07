@@ -6,13 +6,17 @@ import NovaReserva from "./Pages/Reservas/novaReserva";
 import Quartos from "./Pages/Quartos/";
 import Hospedes from "./Pages/Hospedes/index";
 import Funcionarios from "./Pages/Funcionarios/index";
-import Limpezas from "./Pages/Limpezas";
-import Login from "./Pages/Login";
-import Layout from "./components/Layout";
-import style from "./App.module.css";
-import PostHospedes from "./components/Hospedes/PostHospedes/PostHospedes";
-import PutHospedes from "./components/Hospedes/PutHospedes/PutHospedes";
+import Limpezas from "./Pages/Limpezas"
+import Login from "./Pages/Login"
+import Layout from "./components/Layout"
+import style from "./App.module.css"
+import PostHospedes from './components/Hospedes/PostHospedes/PostHospedes'
+import PutHospedes from "./components/Hospedes/PutHospedes/PutHospedes"
 import DeleteHospede from "./components/Hospedes/DeleteHospede/DeleteHospede";
+import PostFuncionarios from "./components/Funcionarios/PostFuncionarios/PostFuncionarios"
+import PutFuncionarios from "./components/Funcionarios/PutFuncionarios/PutFuncionarios"
+import DeleteFuncionarios from "./components/Funcionarios/DeleteFuncionarios/DeleteFuncionarios"
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -33,6 +37,9 @@ function App() {
                 <Route path="/deletehospede" element={<DeleteHospede />} />
                 <Route path="/funcionarios" element={<Funcionarios />} />
                 <Route path="/limpezas" element={<Limpezas />} />
+                <Route path="/addfuncionario" element={<PostFuncionarios />} />
+                <Route path="/updatefuncionario" element={<PutFuncionarios />} />
+                <Route path="/deletefuncionario" element={<DeleteFuncionarios />} />
               </Routes>
             </Layout>
           </BrowserRouter>
