@@ -111,9 +111,7 @@
 }
 
 .linhas {
-    display: flex;
     padding: 16px 24px;
-    gap: 60px;
 }
 
 td>img {
@@ -121,11 +119,11 @@ td>img {
 }
 
 .icons {
-    display: flex;
     margin-left: 15px;
-    gap: 15px
 }
 
 .icons>img {
-    width: 15px;
+    width: 20px;
+    margin-left: 15px;
+    cursor: pointer;
 }
