@@ -12,7 +12,7 @@ export function PostRequest(guestCpf, guestName, guestRoomNumber, guestPhoneNumb
   const newGuest = {
     "cpf": guestCpf,
     "nome": guestName,
-    "numeroQuarto": guestRoomNumber,
+    "numeroQuarto": Number(guestRoomNumber),
     "telefone": guestPhoneNumber
   }
 

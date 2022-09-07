@@ -39,26 +39,24 @@ function Quartos() {
                     <tbody>
                         <tr className={style.body}>
                             <td scope="row" className={style.linhas}>
-                                INSERIR LINHA
+                                11111111111
                             </td>
-                            <td ClassName={style.linhas}>
-                                INSERIR LINHA
+                            <td className={style.linhas}>
+                                11111111111
                             </td>
-                            <td ClassName={style.linhas}>
-                                INSERIR LINHA
+                            <td className={style.linhas}>
+                                11111111111
                             </td>
-                            <td ClassName={style.linhas}>
-                                INSERIR LINHA
+                            <td className={style.linhas}>
+                                11111111
                             </td>
-                            <td ClassName={style.linhas}>
-                                INSERIR LINHA
+                            <td className={style.linhas}>
+                                111111111111
                             </td>
-                            <td ClassName={style.linhas}>
-                                <div className={style.icons}>
-                                    <img src="./view.png" />
-                                    <img src="./lapis.png" />
-                                    <img src="./lixeira.png" />
-                                </div>
+                            <td className={style.icons}>
+                                <img src="./view.png" />
+                                <img src="./lapis.png" />
+                                <img src="./lixeira.png" />
                             </td>
                         </tr>
                     </tbody>
