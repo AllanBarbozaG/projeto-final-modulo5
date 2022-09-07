@@ -4,12 +4,14 @@ import Home from "./Pages/Home/"
 import Reservas from "./Pages/Reservas/"
 import NovaReserva from "./Pages/Reservas/novaReserva"
 import Quartos from "./Pages/Quartos/"
-import Hospedes from "/src/components/Hospedes/Hospedes"
+import Hospedes from "./Pages/Hospedes/index"
 import Funcionarios from "./Pages/Funcionarios/index";
 import Limpezas from "./Pages/Limpezas"
 import Login from "./Pages/Login"
 import Layout from "./components/Layout"
 import style from "./App.module.css"
+import PostHospedes from './components/Hospedes/PostHospedes/PostHospedes'
+import PutHospedes from "./components/Hospedes/PutHospedes/PutHospedes"
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -25,6 +27,8 @@ function App() {
                 <Route path="/addreserva" element={<NovaReserva />} />
                 <Route path="/quartos" element={<Quartos />} />
                 <Route path="/hospedes" element={<Hospedes />} />
+                <Route path="/addhospede" element={<PostHospedes />} />
+                <Route path="/updatehospede" element={<PutHospedes />} />
                 <Route path="/funcionarios" element={<Funcionarios />} />
                 <Route path="/limpezas" element={<Limpezas />} />
               </Routes>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { PostRequest } from "../../../service/requestHospedes";
 import InputwithLabel from "../../InputWithLabel/InputWithLabel";
+import style from "./PostHospedes.module.css";
 
 function PostHospedes() {
   const [guestCpf, setGuestCpf] = useState();
@@ -30,47 +31,83 @@ function PostHospedes() {
   return (
     <>
       <form action="send">
-        <InputwithLabel
-          htmlFor="guestCpf"
-          labelText="CPF:"
-          inputName="guestCpf"
-          type="text"
-          callback={(e) => setGuestCpf(e.target.value)}
-        />
-        <InputwithLabel
-          htmlFor="guestName"
-          labelText="Nome:"
-          inputName="guestName"
-          type="text"
-          callback={(e) => setGuestName(e.target.value)}
-        />
-        <InputwithLabel
-          htmlFor="guestRoomNumber"
-          labelText="Número do quarto:"
-          inputName="guestRoomNumber"
-          type="number"
-          callback={(e) => {
-            console.log("AQUIPORRA " + typeof Number(e.target.value));
-            const number = Number(e.target.value);
-            setGuestRoomNumber(number);
-          }}
-        />
-        <InputwithLabel
-          htmlFor="guestPhoneNumber"
-          labelText="Telefone/Celular:"
-          inputName="guestPhoneNumber"
-          type="text"
-          callback={(e) => setGuestPhoneNumber(e.target.value)}
-        />
-        <button
-          type="submit"
-          onClick={(e) => {
-            e.preventDefault();
-            setSendRequest(true);
-          }}
-        >
-          Cadastrar Hospede
-        </button>
+        <div className={style.inputs}>
+          <label htmlFor="cpf" className={style.label}>
+            CPF
+          </label>
+          <input
+            type="text"
+            name="cpf"
+            id="cpf"
+            className={style.inputsForm}
+            value={guestCpf}
+            onChange={(e) => {
+              setGuestCpf(e.target.value);
+            }}
+            placeholder="Ex: 000-000-000"
+            required
+          />
+        </div>
+        <div className={style.inputs}>
+          <label htmlFor="nome" className={style.label}>
+            Nome Hóspede
+          </label>
+          <input
+            type="text"
+            name="nome"
+            id="nome"
+            className={style.inputsForm}
+            value={guestName}
+            onChange={(e) => setGuestName(e.target.value)}
+            placeholder="Digite nome do hóspede"
+            required
+          />
+        </div>
+        <div className={style.inputs}>
+          <label htmlFor="numQuarto" className={style.label}>
+            Número do quarto
+          </label>
+          <input
+            type="text"
+            name="numQuarto"
+            id="numQuarto"
+            className={style.inputsForm}
+            value={guestRoomNumber}
+            onChange={(e) => setGuestRoomNumber(e.target.value)}
+            placeholder="Digite o numero do quarto"
+            required
+          />
+        </div>
+        <div className={style.container}>
+          <div className={style.inputs}>
+            <label htmlFor="entrada" className={style.label}>
+              Telefone
+            </label>
+            <input
+              type="text"
+              name="entrada"
+              id="entrada"
+              className={style.inputsForm}
+              value={guestPhoneNumber}
+              onChange={(e) => setGuestPhoneNumber(e.target.value)}
+              placeholder="Digite o numero de telefone"
+              required
+            />
+          </div>
+        </div>
+
+        <div className={style.containerButton}>
+          <button
+            className={style.button}
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
+              setSendRequest(true);
+            }}
+          >
+            Cadastrar Hospede
+          </button>
+        </div>
       </form>
       <br />
 

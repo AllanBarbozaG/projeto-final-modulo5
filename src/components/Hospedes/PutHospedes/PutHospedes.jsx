@@ -31,14 +31,19 @@ function PutHospedes() {
   useEffect(() => {
     GetRequest().then((data) => {
       data.map((hospede) => {
-        if (hospede.cpf == guestCpf) {
-          setGuestName(hospede.nome);
-          setGuestPhoneNumber(hospede.telefone);
-          setGuestRoomNumber(hospede.numeroQuarto);
-        }
+
+        setGuestCpf(hospede.cpf);
+        setGuestName(hospede.nome);
+        setGuestPhoneNumber(hospede.telefone);
+        setGuestRoomNumber(hospede.numeroQuarto);
+      });
+    });
+  }, []);
+
       });
     });
   }, [guestCpf]);
+
 
   return (
     <>
@@ -48,6 +53,7 @@ function PutHospedes() {
           labelText="CPF:"
           inputName="guestCpf"
           type="text"
+          value={guestCpf}
           callback={(e) => setGuestCpf(e.target.value)}
         />
         <InputwithLabel
