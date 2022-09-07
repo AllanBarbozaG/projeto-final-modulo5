@@ -33,14 +33,12 @@ function PutHospedes() {
   useEffect(() => {
     GetRequest().then((data) => {
       data.map((hospede) => {
-        guestCpfIndex.map((cpf) => {
-          if (hospede.cpf == cpf) {
-            setGuestCpf(hospede.cpf);
-            setGuestName(hospede.nome);
-            setGuestPhoneNumber(hospede.telefone);
-            setGuestRoomNumber(hospede.numeroQuarto);
-          }
-        });
+        if (hospede.cpf == guestCpfIndex[0]) {
+          setGuestCpf(hospede.cpf);
+          setGuestName(hospede.nome);
+          setGuestPhoneNumber(hospede.telefone);
+          setGuestRoomNumber(hospede.numeroQuarto);
+        }
       });
     });
   }, []);
