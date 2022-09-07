@@ -1,0 +1,43 @@
+.inputs {
+  position: relative;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+form {
+  margin-left: 15px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.inputsForm {
+  display: block;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  color: #111827;
+  background-color: transparent;
+  border-width: 0px;
+  border-bottom: 2px solid #d1d5db;
+  appearance: none;
+}
+
+.inputsForm:focus {
+  outline: none;
+}
+
+.button {
+  width: 250px;
+  border-radius: 30px;
+  background-color: rgb(232, 225, 225);
+}
+
+.containerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
