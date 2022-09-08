@@ -13,12 +13,20 @@ function Reservas() {
     }
     useEffect(() => {
         fetchReserva()
-    }, [])
+    }, [deleteClick])
 
     function handleClick() {
         navigate("/addreserva")
     }
 
+    async function deleteClick(id) {
+        const response = await fetch(`http://localhost:3000/reservas/${id}`, {
+            method: "DELETE"
+        });
+        const data = await response.json();
+        alert(data.Mensagem)
+
+    }
 
     return (
         <div className={style.container}>
@@ -78,8 +86,11 @@ function Reservas() {
                                 </td>
                                 <td className={style.icons}>
                                     <img src="./view.png" />
-                                    <img src="./lapis.png" />
-                                    <img src="./lixeira.png" />
+                                    <img src="./lapis.png" onClick={(e) => {
+                                        navigate("/attreserva")
+                                    }} />
+                                    <img src="./lixeira.png" onClick={
+                                        () => deleteClick(dados.id)} />
                                 </td>
                             </tr>
                         }
