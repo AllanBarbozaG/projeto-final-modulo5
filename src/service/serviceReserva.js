@@ -1,5 +1,5 @@
 function getReserva() {
-    fetch("http://localhost:3000/reservas", {
+    fetch("http://localhost:3000/reservas/", {
         method: "GET",
     }).then((response) => {
         return response.json();
@@ -7,5 +7,4 @@ function getReserva() {
         return data
     })
 }
-
 export default getReserva
