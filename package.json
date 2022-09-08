@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite start",
+    "start": "vite",
     "backend": "json-server --watch db.json --port",
     "dev": "vite",
     "build": "vite build",
