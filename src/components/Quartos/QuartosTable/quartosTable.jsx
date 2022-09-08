@@ -49,8 +49,11 @@ function QuartosTable(props) {
                   <td className={style.linhas}>{quarto.telefone}</td>
                   <td className={style.icons}>
                     <img src="./view.png" />
-                    <Link to={`/edita-quarto/${quarto.id}`}>
-                      <img src="./lapis.png" />
+                    <Link
+                      className={style.link}
+                      to={`/edita-quarto/${quarto.id}`}
+                    >
+                      <img className={style.edit} src="./lapis.png" />
                     </Link>
                     <img
                       src="./lixeira.png"

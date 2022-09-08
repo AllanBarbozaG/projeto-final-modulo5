@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import QuartosTable from "../../components/Quartos/QuartosTable/quartosTable";
-import {getQuartos,deleteQuarto} from "../../service/requestQuartos";
+import { getQuartos, deleteQuarto } from "../../service/requestQuartos";
 
 function Quartos() {
   const [quartos, setQuartos] = useState([]);
