@@ -4,7 +4,8 @@ import Home from "./Pages/Home/";
 import Reservas from "./Pages/Reservas/";
 import NovaReserva from "./Pages/Reservas/novaReserva";
 import AttReserva from "./Pages/Reservas/attReserva";
-import Quartos from "./Pages/Quartos/";
+import Quartos from "./Pages/Quartos/quartos"
+import CreateUpdateQuarto from "./Pages/Quartos/CreateUpdateQuarto"
 import Hospedes from "./Pages/Hospedes/index";
 import Funcionarios from "./Pages/Funcionarios/index";
 import Limpezas from "./Pages/Limpezas"
@@ -35,8 +36,11 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/reservas" element={<Reservas />} />
                 <Route path="/addreserva" element={<NovaReserva />} />
-                <Route path="/attreserva/:id" element={<AttReserva />} />
                 <Route path="/quartos" element={<Quartos />} />
+                <Route path="/criar-quarto" element={<CreateUpdateQuarto />} />
+                <Route path="/edita-quarto/:id" element={<CreateUpdateQuarto />} />
+                <Route path="/attreserva" element={<AttReserva />} />
+                <Route path="/attreserva/:id" element={<AttReserva />} />
                 <Route path="/hospedes" element={<Hospedes />} />
                 <Route path="/addhospede" element={<PostHospedes />} />
                 <Route path="/updatehospede" element={<PutHospedes />} />
