@@ -41,7 +41,7 @@ function App() {
                 <Route path="/deletehospede" element={<DeleteHospede />} />
                 <Route path="/funcionarios" element={<Funcionarios />} />
                 <Route path="/limpezas" element={<Limpezas />} />
-                {/* <Route path="/addlimpeza" element={<PostLimpezas />} /> */}
+                <Route path="/addlimpeza" element={<PostLimpezas />} />
                 {/* <Route path="/updatelimpeza" element={<UpdateLimpezas />} />
                 <Route path="/deletelimpeza" element={<DeleteLimpezas />} /> */}
                 <Route path="/addfuncionario" element={<PostFuncionarios />} />
