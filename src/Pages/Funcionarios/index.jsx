@@ -10,11 +10,16 @@ import { GetFuncionario }  from "../../service/requestFuncionarios";
 
 import style from "./funcionarios.module.css"
 
+export let funcionarioId = [];
+export let deleteFuncionario = false;
+
 
 function Funcionarios() {
     const [funcionarios, setFuncionarios] = useState([]);
     const [loadingReqData, setLoadingReqData] = useState(true);
-
+    const [idFunctionario, setIdFunctionario] = useState();
+    console.log(idFunctionario);
+    console.log(funcionarioId);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,6 +29,10 @@ function Funcionarios() {
 
         })
     }, [loadingReqData]);
+
+    useEffect(() => {
+        funcionarioId = [];
+    });
 
     function handleSetPage(page) {
         navigate(page);
@@ -86,13 +95,24 @@ function Funcionarios() {
                         <img
                           src="./lapis.png"
                           onClick={(e) => {
+                            setIdFunctionario(funcionario.id);
+                            funcionarioId.push(funcionario.id);
                             navigate("/updatefuncionario");
                           }}
                         />
                         <img src="./lixeira.png" 
                         onClick={(e) => {
+                          e.preventDefault;
+                          const confirmation = confirm(
+                            "Deseja realmente excluir o funcionário?"
+                          );
+                          if (confirmation == true) {
+                            setIdFunctionario(funcionario.id);
+                            funcionarioId.push(funcionario.id);
+                            deleteFuncionario = true;
                           navigate("/deletefuncionario");
-                        }}
+                        }
+                         }}
                         />
 
                       </td>
