@@ -34,7 +34,14 @@ function Limpezas() {
                         <h2>Controle de Limpezas</h2>
                     </div>
                     <div className={style.search}>
-                        <button type="button" onClick={() => handleSetPage("/addlimpeza")} className={style.buttonCreate}>Adicionar limpeza</button>
+                        <button 
+                        type="button" 
+                        onClick={() => handleSetPage("/addlimpeza")} 
+                        className={style.buttonCreate}
+                        
+                        >
+                            Adicionar limpeza
+                        </button>
                         <input type={"text"} placeholder="Buscar limpeza" />
                     </div>
 
@@ -67,25 +74,32 @@ function Limpezas() {
                                 {limpezas.map((limpeza) => {
                                     return (
                                         <tr className={style.body} key={limpeza.id}>
-                                            <td scope="row" className={style.linhas}>
-                                                {limpeza.id}
-                                            </td>
-                                            <td className={style.linhas}>
-                                                {limpeza.numeroQuarto}
-                                            </td>
-                                            <td className={style.linhas}>
-                                                {limpeza.controle}
-                                            </td>
-                                            <td className={style.linhas}>
-                                                {limpeza.id_funcionario}
-                                            </td>
-                                            <td className={style.linhas}>
-                                                {limpeza.dataEntrada}
-                                            </td>
+                                            <td scope="row" className={style.linhas}>{limpeza.id}</td>
+                                            <td className={style.linhas}>{limpeza.numeroQuarto}</td>
+                                            <td className={style.linhas}>{limpeza.controle}</td>
+                                            <td className={style.linhas}>{limpeza.id_funcionario}</td>
+                                            <td className={style.linhas}>{limpeza.dataEntrada}</td>
                                             <td className={style.icons}>
                                                 <img src="./view.png" />
-                                                <img src="./lapis.png" />
-                                                <img src="./lixeira.png" />
+                                                <img
+                                                    src="./lapis.png"
+                                                    onClick={(e) => {
+                                                        navigate("/updatelimpeza");
+                                                    }}
+                                                    />
+                                                <img
+                                                src="./lixeira.png"
+                                                onClick={(e) => {
+                                                    e.preventDefault;
+                                                    const confirmation = confirm(
+                                                    "Tem certeza de que deseja excluir o registro desta limpeza? Não será possível recuperar os dados."
+                                                    );
+                                                    if (confirmation == true) {
+                                                    setGuestCpf(limpeza.id);
+                                                    navigate("/deletelimpeza");
+                                                    }
+                                                }}
+                                                />
                                             </td>
                                         </tr>
                                     );

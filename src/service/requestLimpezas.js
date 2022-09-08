@@ -27,19 +27,20 @@ export function PostLimpezasRequest(roomNumber, isItClean, employeeId, cleanning
     }).then(response =>
         response.json()
     )
+
 }
 
-export function PutLimpezasRequest(cleanningId, roomNumber, isItClean, employeeId, cleanningDate) {
+export function PutLimpezasRequest(roomNumber, isItClean, employeeId, cleanningDate) {
 
     const newCleanning = {
 
-        "numeroQuarto": roomNumber,
+        "numeroQuarto": Number(roomNumber),
         "controle": isItClean,
         "id_funcionario": employeeId,
         "dataEntrada": cleanningDate,
     }
 
-    return fetch(`http://localhost:3000/limpeza/${cleanningId}`, {
+    return fetch(`http://localhost:3000/limpezas/${cleanningId}`, {
         method: "PUT",
         body: JSON.stringify(newCleanning),
         mode: "cors",
@@ -50,7 +51,7 @@ export function PutLimpezasRequest(cleanningId, roomNumber, isItClean, employeeI
 }
 
 export function DeleteLimpezasRequest(cleanningId) { 
-    return fetch(`http://localhost:3000/funcionario/${cleanningId}`, {
+    return fetch(`http://localhost:3000/limpezas/${cleanningId}`, {
         method: "DELETE",
         mode: "cors",
     }).then((response) => {
