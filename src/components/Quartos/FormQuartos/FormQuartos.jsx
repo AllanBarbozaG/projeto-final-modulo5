@@ -19,7 +19,7 @@ function FormQuartos(props) {
   }, [props.updateQuarto]);
 
   return (
-    <form>
+    <form className={style.form}>
       <main className={style.container}>
         {props.hasId && (
           <input className={style.inputsForm} value={param.id} disabled></input>

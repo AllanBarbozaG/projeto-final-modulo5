@@ -14,7 +14,7 @@
   opacity: 0;
 }
 
-form {
+.form {
   display: flex;
   align-items: center;
   justify-content: center;
