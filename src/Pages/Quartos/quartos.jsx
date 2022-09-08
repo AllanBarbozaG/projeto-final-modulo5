@@ -1,23 +1,30 @@
 import { useEffect, useState } from "react";
 import QuartosTable from "../../components/Quartos/QuartosTable/quartosTable";
 import { getQuartos, deleteQuarto } from "../../service/requestQuartos";
+import Loading from "../../components/Loading/index";
 
 function Quartos() {
   const [quartos, setQuartos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchQuartos = () => {
     getQuartos()
       .then(({ data }) => {
         setQuartos(data);
+        setLoading(false)
       })
       .catch((error) => {
         console.log("Deu ruim", error);
-      });
+      },[loading]);
   };
 
   useEffect(() => {
     fetchQuartos();
   }, []);
+
+  if (loading) {
+    return <Loading />
+}
 
   return (
     <>

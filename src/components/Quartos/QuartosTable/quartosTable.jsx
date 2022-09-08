@@ -13,7 +13,6 @@ function QuartosTable(props) {
             Adicionar quarto
           </button>
         </Link>
-        <input type={"text"} placeholder="Buscar" />
       </div>
 
       <div className={style.containerTable}>
@@ -48,7 +47,6 @@ function QuartosTable(props) {
                   <td className={style.linhas}>{quarto.controle}</td>
                   <td className={style.linhas}>{quarto.telefone}</td>
                   <td className={style.icons}>
-                    <img src="./view.png" />
                     <Link
                       className={style.link}
                       to={`/edita-quarto/${quarto.id}`}
