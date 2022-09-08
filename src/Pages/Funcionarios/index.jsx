@@ -8,6 +8,8 @@ import  DeleteFuncionarios  from "../../components/Funcionarios/DeleteFuncionari
 import  PutFuncionarios from "../../components/Funcionarios/PutFuncionarios/PutFuncionarios";
 import { GetFuncionario }  from "../../service/requestFuncionarios";
 
+import Loading from "../../components/Loading/index"
+
 import style from "./funcionarios.module.css"
 
 export let funcionarioId = [];
@@ -16,7 +18,9 @@ export let deleteFuncionario = false;
 
 function Funcionarios() {
     const [funcionarios, setFuncionarios] = useState([]);
+    
     const [loadingReqData, setLoadingReqData] = useState(true);
+
     const [idFunctionario, setIdFunctionario] = useState();
     console.log(idFunctionario);
     console.log(funcionarioId);
@@ -28,7 +32,7 @@ function Funcionarios() {
         setLoadingReqData(false);
 
         })
-    }, [loadingReqData]);
+    }, []);
 
     useEffect(() => {
         funcionarioId = [];
@@ -38,19 +42,16 @@ function Funcionarios() {
         navigate(page);
     }
     
+    if (loadingReqData) {
+      return <Loading />
+  }
     
     return (
         <>
-        {loadingReqData ? (
-        <>
-          <div>CARREGANDO...</div>
-          {console.log("carregando")}
-        </>
-      ) : (
+        
         <div className={style.container}>
           <div className={style.title}>
             <h2>Controle de funcionários</h2>
-            <div className={style.reservation}>Total de funcionários</div>
           </div>
           <div className={style.search}>
             <button
@@ -60,7 +61,6 @@ function Funcionarios() {
             >
               Adicionar Funcionário
             </button>
-            <input type={"text"} placeholder="Buscar Id" />
           </div>
 
           <div className={style.containerTable}>
@@ -91,11 +91,11 @@ function Funcionarios() {
                       <td className={style.linhas}>{funcionario.data_admissao}</td>
 
                       <td className={style.icons}>
-                        <img src="./view.png" />
                         <img
                           src="./lapis.png"
                           onClick={(e) => {
-                            setIdFunctionario(funcionario.id);
+                            console.log(funcionario)
+                            // setIdFunctionario(funcionario.id);
                             funcionarioId.push(funcionario.id);
                             navigate("/updatefuncionario");
                           }}
@@ -123,7 +123,7 @@ function Funcionarios() {
             </table>
           </div>
         </div>
-      )}
+      )
     </>
     );
 }
