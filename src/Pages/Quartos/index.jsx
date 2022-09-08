@@ -1,14 +1,14 @@
-import style from "./limpezas.module.css"
+import style from "./quartos.module.css"
 
-function Limpezas() {
+function Quartos() {
     return (
         <div className={style.container}>
             <div className={style.title}>
-                <h2>Controle de Limpezas</h2>
+                <h2>Quartos</h2>
             </div>
             <div className={style.search}>
-                <button type="button" className={style.buttonCreate}>Visualizar limpezas</button>
-                <input type={"text"} placeholder="Buscar quarto" />
+                <button type="button" className={style.buttonCreate}>Adicionar quartos</button>
+                <input type={"text"} placeholder="Buscar" />
             </div>
 
 
@@ -67,4 +67,4 @@ function Limpezas() {
     )
 }
 
-export default Limpezas
+export default Quartos

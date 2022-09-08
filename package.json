@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",
+    "backend": "json-server --watch db.json --port",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -12,7 +14,9 @@
     "axios": "^0.27.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5",
+    "json-server": "^0.17.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
