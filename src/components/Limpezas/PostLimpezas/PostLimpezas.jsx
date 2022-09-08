@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { PostLimpezasRequest } from "../../../service/requestLimpezas";
 
-// import style from "./PostLimpezas.module.css";
+import style from "./PostLimpezas.module.css";
 
 function PostLimpezas() {
     const [roomNumber, setRoomNumber] = useState(0);
@@ -9,7 +9,6 @@ function PostLimpezas() {
     const [employeeId, setEmployeeId] = useState("");
     const [cleanningDate, setCleanningDate] = useState("");
     const [sendRequest, setSendRequest] = useState(false);
-    const [requestResponse, setResquestResponse] = useState({});
 
     useEffect(() => {
     if (sendRequest) {
@@ -17,7 +16,6 @@ function PostLimpezas() {
         PostLimpezasRequest(roomNumber, isItClean, employeeId, cleanningDate)
         .then((json) => {
             console.log(json);
-            setResquestResponse(json);
         })
         .catch((error) => console.log(error + "deu erro"));
     }
@@ -26,12 +24,13 @@ function PostLimpezas() {
     return (
         <>
             <form action="send">
+                
                 <div className={style.inputs}>
                     <label htmlFor="numeroQuarto" className={style.label}>
                         Número do quarto
                     </label>
                     <input
-                    type="text"
+                    type="number"
                     name="Número do quarto"
                     id="numeroQuarto"
                     className={style.inputsForm}
@@ -60,7 +59,7 @@ function PostLimpezas() {
                 </div>
                 <div className={style.inputs}>
                     <label htmlFor="id_funcionario" className={style.label}>
-                        Número do quarto
+                        ID Funcionário
                     </label>
                     <input
                     type="text"
@@ -69,7 +68,7 @@ function PostLimpezas() {
                     className={style.inputsForm}
                     value={employeeId}
                     onChange={(e) => setEmployeeId(e.target.value)}
-                    placeholder="Digite o número do quarto"
+                    placeholder="Digite o Id do funcionário"
                     required
                     />
                 </div>
@@ -105,18 +104,6 @@ function PostLimpezas() {
                 </div>
             </form>
             <br />
-
-            {/* Treating server responses */}
-            {requestResponse ==
-            "SQLITE_CONSTRAINT: UNIQUE constraint failed: hospedes.cpf" ? (
-            <h3>
-                Cadastro não realizado. Esta limpeza etc
-            </h3>
-            ) : typeof requestResponse == "object" ? (
-            <h3>{requestResponse.Mensagem}</h3>
-            ) : (
-            <h3>{requestResponse}</h3>
-            )}
         </>
     );
 }
