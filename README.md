@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
 </div>
 
-### App para serviços de hospedagem desenvolvido em React, utilizando API Rest para execução do CRUD e a estrutura de organização MVC. Tem como finalidade a consulta e gerenciamento de informações.
+## App para serviços de hospedagem desenvolvido em React, utilizando API Rest para execução do CRUD. Tem como finalidade a consulta e gerenciamento de informações.
 
 ## 🚀 Tecnologias utilizadas
 
@@ -28,6 +28,13 @@ Clone o projeto
 https://github.com/AllanBarbozaG/projeto-final-modulo5.git
 
 ```
+## Executando:
+
+```bash
+$ npm install
+$ npm start
+```
+
 
 
 
