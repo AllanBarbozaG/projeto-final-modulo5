@@ -19,7 +19,6 @@ function Reservas() {
         navigate("/addreserva")
     }
 
-
     return (
         <div className={style.container}>
             <div className={style.title}>
@@ -78,7 +77,9 @@ function Reservas() {
                                 </td>
                                 <td className={style.icons}>
                                     <img src="./view.png" />
-                                    <img src="./lapis.png" />
+                                    <img src="./lapis.png" onClick={(e) => {
+                                        navigate("/attreserva")
+                                    }} />
                                     <img src="./lixeira.png" />
                                 </td>
                             </tr>
