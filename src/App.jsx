@@ -36,10 +36,11 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/reservas" element={<Reservas />} />
                 <Route path="/addreserva" element={<NovaReserva />} />
-                <Route path="/Quartos" element={<Quartos />} />
+                <Route path="/quartos" element={<Quartos />} />
                 <Route path="/criar-quarto" element={<CreateUpdateQuarto />} />
                 <Route path="/edita-quarto/:id" element={<CreateUpdateQuarto />} />
                 <Route path="/attreserva" element={<AttReserva />} />
+                <Route path="/attreserva/:id" element={<AttReserva />} />
                 <Route path="/hospedes" element={<Hospedes />} />
                 <Route path="/addhospede" element={<PostHospedes />} />
                 <Route path="/updatehospede" element={<PutHospedes />} />
