@@ -13,7 +13,7 @@ function Loading() {
                     <span className={style.left}> <span className={style.anim}></span ></span >
                     <span className={style.right}> <span className={style.anim} ></span ></span >
                 </span >
-                <span className={`${style.ouro} ${ouro3}`}>
+                <span className={`${style.ouro} ${style.ouro3}`}>
                     <span className={style.left}> <span className={style.anim}> </span> </span >
                     <span className={style.right}> <span className={style.anim}></span ></span >
                 </span >
