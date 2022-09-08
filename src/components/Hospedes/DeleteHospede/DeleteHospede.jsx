@@ -1,6 +1,6 @@
 import { DeleteRequest } from "../../../service/requestHospedes.js";
 import { useEffect } from "react";
-import Hospedes, { guestCpfIndex } from "../../../Pages/Hospedes/index.jsx";
+import { guestCpfIndex } from "../../../Pages/Hospedes/index.jsx";
 import { deleteGuest } from "../../../Pages/Hospedes/index.jsx";
 import { useNavigate } from "react-router-dom";
 
