@@ -13,6 +13,7 @@ function Hospedes() {
   const [guestCpfSearch, setGuestCpfSearch] = useState();
   console.log("gestcpfsearch: " + guestCpfSearch);
   const navigate = useNavigate();
+  const [guestFound, setGuestFound] = useState(false);
 
   useEffect(() => {
     GetRequest().then((data) => {
@@ -45,7 +46,10 @@ function Hospedes() {
             if (hospede.cpf == guestCpfSearch) {
               return (
                 <>
-                  <div className={style.container}>
+                  <div
+                    onLoad={() => setGuestFound(true)}
+                    className={style.container}
+                  >
                     <div className={style.title}>
                       <h2>Controle de hóspedes</h2>
                       <div className={style.reservation}>Total de hóspedes</div>
@@ -61,7 +65,10 @@ function Hospedes() {
                         Adicionar Hospede
                       </button>
                       <input
-                        onChange={(e) => setGuestCpfSearch(e.target.value)}
+                        onChange={(e) => {
+                          setGuestCpfSearch(e.target.value);
+                          setGuestFound(false);
+                        }}
                         type={"text"}
                         value={guestCpfSearch}
                         placeholder="Buscar CPF"
@@ -133,6 +140,39 @@ function Hospedes() {
                     </div>
                   </div>
                 </>
+              );
+            } else if (
+              hospedes.indexOf(hospede) == hospedes.length - 1 &&
+              hospede.cpf != guestCpfSearch &&
+              !guestFound &&
+              guestCpfSearch.length >= 11
+            ) {
+              return (
+                <div className={style.container}>
+                  <div className={style.title}>
+                    <h2>Controle de hóspedes</h2>
+                    <div className={style.reservation}>Total de hóspedes</div>
+                    <div className={style.checkin}>Hóspedes chegando</div>
+                    <div className={style.checkout}>Hóspedes saindo</div>
+                  </div>
+                  <div className={style.search}>
+                    <button
+                      type="button"
+                      onClick={() => handleSetPage("/addhospede")}
+                      className={style.buttonCreate}
+                    >
+                      Adicionar Hospede
+                    </button>
+                    <input
+                      onChange={(e) => setGuestCpfSearch(e.target.value)}
+                      type={"text"}
+                      value={guestCpfSearch}
+                      placeholder="Buscar CPF"
+                    />
+                  </div>
+
+                  <h1>HOSPEDE NÃO ENCONTRADO.</h1>
+                </div>
               );
             }
           })}
