@@ -3,6 +3,7 @@ import { useState } from "react";
 import Home from "./Pages/Home/";
 import Reservas from "./Pages/Reservas/";
 import NovaReserva from "./Pages/Reservas/novaReserva";
+import AttReserva from "./Pages/Reservas/attReserva";
 import Quartos from "./Pages/Quartos/";
 import Hospedes from "./Pages/Hospedes/index";
 import Funcionarios from "./Pages/Funcionarios/index";
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/reservas" element={<Reservas />} />
                 <Route path="/addreserva" element={<NovaReserva />} />
+                <Route path="/attreserva" element={<AttReserva />} />
                 <Route path="/quartos" element={<Quartos />} />
                 <Route path="/hospedes" element={<Hospedes />} />
                 <Route path="/addhospede" element={<PostHospedes />} />
