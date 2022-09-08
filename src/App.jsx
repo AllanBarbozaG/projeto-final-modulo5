@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState } from "react"
 import Home from "./Pages/Home/"
 import Reservas from "./Pages/Reservas/"
-import Quartos from "./Pages/Quartos/"
+import Quartos from "./Pages/Quartos/quartos"
+import CreateUpdateQuarto from "./Pages/Quartos/CreateUpdateQuarto"
 import Hospedes from "./Pages/Hospedes"
 import Funcionarios from "./Pages/Funcionarios"
 import Limpezas from "./Pages/Limpezas"
@@ -20,6 +21,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/reservas" element={<Reservas />} />
             <Route path="/Quartos" element={<Quartos />} />
+            <Route path="/criar-quarto" element={<CreateUpdateQuarto />} />
+            <Route path="/edita-quarto/:id" element={<CreateUpdateQuarto />} />
             <Route path="/Hospedes" element={<Hospedes />} />
             <Route path="/Funcionarios" element={<Funcionarios />} />
             <Route path="/Limpezas" element={<Limpezas />} />
