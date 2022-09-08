@@ -9,7 +9,7 @@ export let deleteGuest = false;
 function Hospedes() {
   const [hospedes, setHospedes] = useState([]);
   const [loadingReqData, setLoadingReqData] = useState(true);
-  const [guestCpf, setGuestCpf] = useState();
+ 
   const [guestCpfSearch, setGuestCpfSearch] = useState();
   console.log("gestcpfsearch: " + guestCpfSearch);
   const navigate = useNavigate();
@@ -113,7 +113,7 @@ function Hospedes() {
                               <img
                                 src="./lapis.png"
                                 onClick={(e) => {
-                                  setGuestCpf(hospede.cpf);
+                                  
                                   guestCpfIndex.push(hospede.cpf);
                                   navigate("/updatehospede");
                                 }}
@@ -126,7 +126,7 @@ function Hospedes() {
                                     "Tem certeza de que deseja excluir o registro deste hóspede?Não será possível recuperar os dados."
                                   );
                                   if (confirmation == true) {
-                                    setGuestCpf(hospede.cpf);
+                                    
                                     guestCpfIndex.push(hospede.cpf);
                                     deleteGuest = true;
                                     navigate("/deletehospede");
@@ -238,7 +238,7 @@ function Hospedes() {
                         <img
                           src="./lapis.png"
                           onClick={(e) => {
-                            setGuestCpf(hospede.cpf);
+                           
                             guestCpfIndex.push(hospede.cpf);
                             navigate("/updatehospede");
                           }}
@@ -251,7 +251,7 @@ function Hospedes() {
                               "Tem certeza de que deseja excluir o registro deste hóspede?Não será possível recuperar os dados."
                             );
                             if (confirmation == true) {
-                              setGuestCpf(hospede.cpf);
+                              
                               guestCpfIndex.push(hospede.cpf);
                               deleteGuest = true;
                               navigate("/deletehospede");
