@@ -1,37 +1,52 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import style from "./addReserva.module.css";
 
-function attReserva() {
+function AttReserva() {
     const [cpf, setCpf] = useState("");
     const [nome, setNome] = useState("");
     const [numQuarto, setNumQuarto] = useState(0);
     const [entrada, setEntrada] = useState("");
     const [saida, setSaida] = useState("");
+    const { id } = useParams();
 
     const navigate = useNavigate();
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    useEffect(() => {
+        fetch(`http://localhost:3000/reservas/${id}`)
+            .then(response => {
+                return response.json()
+            }).then(data => {
+                setCpf(data.CPF)
+                setNome(data.nome)
+                setNumQuarto(data.numeroQuarto)
+                setEntrada(data.dataEntrada)
+                setSaida(data.dataSaida)
+            })
+    }, [])
 
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         const attReserva = {
             cpf,
             nome,
             numeroQuarto: Number(numQuarto),
             dataEntrada: entrada,
             dataSaida: saida,
-        };
-
-        const response = await fetch("http://localhost:3000/reservas", {
+        }
+        const response = await fetch(`http://localhost:3000/reservas/${id}`, {
             method: "PUT",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(attReserva),
-            headers: {
-                "Content-Type": "application/json",
-            },
         });
         const data = await response.json();
+
         alert(data.Mensagem);
+        navigate("/reservas")
     };
+
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -111,7 +126,8 @@ function attReserva() {
                 </div>
             </div>
             <div className={style.containerButton}>
-                <button className={style.button} type="submit">
+                <button className={style.button} type="submit" onClick={
+                    (e) => handleSubmit(e)}>
                     Atualizar reserva
                 </button>
             </div>
@@ -119,4 +135,5 @@ function attReserva() {
     );
 }
 
-export default attReserva;
+
+export default AttReserva;

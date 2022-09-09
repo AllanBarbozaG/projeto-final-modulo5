@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetRequest } from "../../service/requestHospedes";
 import style from "./Hospedes.module.css";
+import Loading from "../../components/Loading/index";
 
 export let guestCpfIndex = [];
 export let deleteGuest = false;
@@ -9,15 +10,12 @@ export let deleteGuest = false;
 function Hospedes() {
   const [hospedes, setHospedes] = useState([]);
   const [loadingReqData, setLoadingReqData] = useState(true);
- 
   const [guestCpfSearch, setGuestCpfSearch] = useState();
-  console.log("gestcpfsearch: " + guestCpfSearch);
   const navigate = useNavigate();
   const [guestFound, setGuestFound] = useState(false);
 
   useEffect(() => {
     GetRequest().then((data) => {
-      console.log("req feita");
       setHospedes(data);
       setLoadingReqData(false);
     });
@@ -35,10 +33,7 @@ function Hospedes() {
     <>
       {/* Mensagem de carregando */}
       {loadingReqData ? (
-        <>
-          <div>CARREGANDO...</div>
-          {console.log("carregando")}
-        </>
+        <Loading />
       ) : guestCpfSearch && guestCpfSearch.length == 11 ? (
         <>
           {/* Após verificar se há guestCpfSearch, irá exibir praticamente a mesma página, porém, apenas com o hospede procurado */}
@@ -113,7 +108,6 @@ function Hospedes() {
                               <img
                                 src="./lapis.png"
                                 onClick={(e) => {
-                                  
                                   guestCpfIndex.push(hospede.cpf);
                                   navigate("/updatehospede");
                                 }}
@@ -126,7 +120,6 @@ function Hospedes() {
                                     "Tem certeza de que deseja excluir o registro deste hóspede?Não será possível recuperar os dados."
                                   );
                                   if (confirmation == true) {
-                                    
                                     guestCpfIndex.push(hospede.cpf);
                                     deleteGuest = true;
                                     navigate("/deletehospede");
@@ -238,7 +231,6 @@ function Hospedes() {
                         <img
                           src="./lapis.png"
                           onClick={(e) => {
-                           
                             guestCpfIndex.push(hospede.cpf);
                             navigate("/updatehospede");
                           }}
@@ -250,8 +242,7 @@ function Hospedes() {
                             const confirmation = confirm(
                               "Tem certeza de que deseja excluir o registro deste hóspede?Não será possível recuperar os dados."
                             );
-                            if (confirmation == true) {
-                              
+                            if (confirmation) {
                               guestCpfIndex.push(hospede.cpf);
                               deleteGuest = true;
                               navigate("/deletehospede");

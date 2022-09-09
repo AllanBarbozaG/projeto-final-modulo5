@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { PutFuncionario } from "../../../service/requestFuncionarios";
 import { GetFuncionario } from "../../../service/requestFuncionarios";
 
+import { funcionarioId } from "../../../Pages/Funcionarios";
+import { useNavigate } from "react-router-dom";
+
 import style from "./PutFuncionarios.module.css"
 
 function PutFuncionarios() {
@@ -15,7 +18,9 @@ const [employeeId, setEmployeeId] = useState("")
 
   const [requestResponse, setResquestResponse] = useState({});
   
-  const [teste, setTeste] = useState(false)
+  //const [teste, setTeste] = useState(false)
+
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -23,7 +28,7 @@ const [employeeId, setEmployeeId] = useState("")
       setSendRequest(false);
     PutFuncionario(employeeId, employeeName, admissionDate)
       .then((json) => {
-        setTeste(true)
+      //  setTeste(true)
         setResquestResponse(json);
       })
       .catch((error) => console.log(error + "deu erro"));
@@ -33,10 +38,11 @@ const [employeeId, setEmployeeId] = useState("")
   useEffect(() => {
     GetFuncionario().then((data) => {
       data.map((funcionario) => {
-
+        if (funcionario.id == funcionarioId[0]){
         setEmployeeId(funcionario.id);
         setEmployeeName(funcionario.nome);
         setAdmissionDate(funcionario.data_admissao);
+      }
       });
     });
   }, []);
@@ -95,21 +101,39 @@ const [employeeId, setEmployeeId] = useState("")
           required
         />
       </div>
-    </form>
-    <>
+
+      <div className={style.containerButton}>
         <button
-          type="button"
+        className={style.button}
+          type="submit"
           onClick={(e) => {
             e.preventDefault();
             setSendRequest(true);
   }}
         > Atualizar dados </button>
-      </>
+        </div>
+    </form>
+
+    {console.log("requestResponse: " + requestResponse)}
+      {/* Treating server responses */}
+      {requestResponse ==
+      "SQLITE_CONSTRAINT: UNIQUE constraint failed: funcionario.id" ? (
+        <h3 className="titleh3">
+          Atualização não realizada
+        </h3>
+      ) : typeof requestResponse == "object" ? (
+        <h3>{requestResponse.Mensagem || requestResponse.message}</h3>
+      ) : (
+        <h3>{requestResponse}</h3>
+      )}
 
     </>
-  );
   
+    
+    );
 
+  
+  
 
 }
 

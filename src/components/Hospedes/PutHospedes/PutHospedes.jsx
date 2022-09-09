@@ -4,19 +4,16 @@ import { guestCpfIndex } from "../../../Pages/Hospedes";
 import style from "./PutHospedes.module.css";
 
 function PutHospedes() {
-  console.log(guestCpfIndex);
   const [guestCpf, setGuestCpf] = useState();
-  // console.log(guestCpf);
+
   const [guestName, setGuestName] = useState("");
-  // console.log(guestName)
+
   const [guestRoomNumber, setGuestRoomNumber] = useState(0);
-  // console.log(typeof guestRoomNumber);
+
   const [guestPhoneNumber, setGuestPhoneNumber] = useState("");
-  console.log(guestPhoneNumber);
-  // console.log(guestPhoneNumber)
+
   const [sendRequest, setSendRequest] = useState(false);
   const [requestResponse, setResquestResponse] = useState({});
-  console.log(requestResponse);
 
   useEffect(() => {
     if (sendRequest) {
@@ -128,7 +125,7 @@ function PutHospedes() {
         </div>
       </form>
       <br />
-      {console.log("requestResponse: " + requestResponse)}
+
       {/* Treating server responses */}
       {requestResponse ==
       "SQLITE_CONSTRAINT: UNIQUE constraint failed: hospedes.cpf" ? (

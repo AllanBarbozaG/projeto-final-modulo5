@@ -2,18 +2,18 @@
     position: relative;
     margin-bottom: 24px;
     width: 100%;
-  }
-  
-  form {
+}
+
+form {
     margin-left: 15px;
-  }
-  
-  .container {
+}
+
+.container {
     display: flex;
     width: 100%;
-  }
-  
-  .inputsForm {
+}
+
+.inputsForm {
     display: block;
     padding: 10px 0;
     width: 100%;
@@ -24,22 +24,20 @@
     border-width: 0px;
     border-bottom: 2px solid #d1d5db;
     appearance: none;
-  }
-  
-  .inputsForm:focus {
+    }
+
+.inputsForm:focus {
     outline: none;
-  }
-  
-  .button {
+}
+
+.button {
+    width: 250px;
     border-radius: 30px;
     background-color: rgb(232, 225, 225);
-    margin-top: 10px;
-  }
-  
-  .containerButton {
-    width: auto;
+}
+
+.containerButton {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
+}

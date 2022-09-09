@@ -13,14 +13,14 @@ function PostFuncionarios() {
 
   const [sendRequest, setSendRequest] = useState(false);
   const [requestResponse, setResquestResponse] = useState({});
-  console.log(requestResponse);
 
   
   useEffect(() => {
     if (sendRequest) {
       setSendRequest(false);
     PostFuncionario(employeeName, admissionDate)
-      .then((json) => console.log(json))
+      .then((json) => {setResquestResponse() 
+      console.log(json)} )
       .catch((error) => console.log(error + 'deu erro'));
   } 
 }, [sendRequest]);
@@ -51,7 +51,7 @@ function PostFuncionarios() {
           Data de Admissão
         </label>
         <input
-          type="date"
+          type="text"
           name="data"
           id="data"
           className={style.inputsForm}
@@ -77,6 +77,7 @@ function PostFuncionarios() {
       </div>
     </form>
 
+
      {requestResponse ==
       "SQLITE_CONSTRAINT: UNIQUE constraint failed: funcionarios.id" ? (
         <h3>
@@ -88,33 +89,6 @@ function PostFuncionarios() {
       ) : (
         <h3>{requestResponse}</h3>
       )}
-
-      {/* <form action="send">
-        <InputwithLabel
-          htmlFor="employeeName"
-          labelText="Nome:"
-          inputName="employeeName"
-          type="text"
-          callback={(e) => setEmployeeName(e.target.value)}
-        />
-        <InputwithLabel
-          htmlFor="admissionDate"
-          labelText="Data de admissão:"
-          inputName="admissionDate"
-          type="date"
-          callback={(e) => setAdmissionDate(e.target.value)}
-        />
-
-        <button
-          type="submit"
-          onClick={(e) => {
-            e.preventDefault();
-            setSendRequest(true);
-          }}
-        >
-          Cadastrar funcionário
-        </button>
-      </form> */}
     </>
   );
 }

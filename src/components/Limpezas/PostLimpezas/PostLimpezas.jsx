@@ -14,7 +14,7 @@ function PostLimpezas() {
     if (sendRequest) {
         setSendRequest(false);
         PostLimpezasRequest(roomNumber, isItClean, employeeId, cleanningDate)
-        .then((json) => {
+        .then((json) => {setSendRequest()
             console.log(json);
         })
         .catch((error) => console.log(error + "deu erro"));
@@ -30,8 +30,8 @@ function PostLimpezas() {
                         Número do quarto
                     </label>
                     <input
-                    type="number"
-                    name="Número do quarto"
+                    type="text"
+                    name="numeroQuarto"
                     id="numeroQuarto"
                     className={style.inputsForm}
                     value={roomNumber}
