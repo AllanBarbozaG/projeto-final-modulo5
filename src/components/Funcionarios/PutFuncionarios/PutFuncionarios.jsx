@@ -118,7 +118,7 @@ const [employeeId, setEmployeeId] = useState("")
       {/* Treating server responses */}
       {requestResponse ==
       "SQLITE_CONSTRAINT: UNIQUE constraint failed: funcionario.id" ? (
-        <h3>
+        <h3 className="titleh3">
           Atualização não realizada
         </h3>
       ) : typeof requestResponse == "object" ? (
