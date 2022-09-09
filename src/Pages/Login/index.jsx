@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Loading from "../../components/Loading";
+import LoginPageLoading from "../../components/LoginPageLoading/index";
 import style from "./login.module.css";
 
 function Login(props) {
@@ -17,6 +17,7 @@ function Login(props) {
   }, []);
   return (
     <>
+
       {!removeloadingPage && <Loading />}
       {removeloadingPage && <div className={style.container}>
         <div className={style.imgLogo}>
@@ -27,6 +28,7 @@ function Login(props) {
           <label htmlFor="register"> Matrícula:</label>
           <div className={style.inputs}>
             <input type={"text"} id="register" />
+
           </div>
 
           <label htmlFor="password">Senha:</label>
