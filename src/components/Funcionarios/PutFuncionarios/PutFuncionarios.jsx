@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { PutFuncionario } from "../../../service/requestFuncionarios";
 import { GetFuncionario } from "../../../service/requestFuncionarios";
 
+import { funcionarioId } from "../../../Pages/Funcionarios";
+
 import style from "./PutFuncionarios.module.css"
 
 function PutFuncionarios() {
@@ -33,6 +35,7 @@ const [employeeId, setEmployeeId] = useState("")
   useEffect(() => {
     GetFuncionario().then((data) => {
       data.map((funcionario) => {
+        if (funcionario.id == funcionarioId[0])
 
         setEmployeeId(funcionario.id);
         setEmployeeName(funcionario.nome);
