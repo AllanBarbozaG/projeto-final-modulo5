@@ -47,9 +47,6 @@ function Hospedes() {
                   >
                     <div className={style.title}>
                       <h2>Controle de hóspedes</h2>
-                      <div className={style.reservation}>Total de hóspedes</div>
-                      <div className={style.checkin}>Hóspedes chegando</div>
-                      <div className={style.checkout}>Hóspedes saindo</div>
                     </div>
                     <div className={style.search}>
                       <button
@@ -144,9 +141,7 @@ function Hospedes() {
                 <div className={style.container}>
                   <div className={style.title}>
                     <h2>Controle de hóspedes</h2>
-                    <div className={style.reservation}>Total de hóspedes</div>
-                    <div className={style.checkin}>Hóspedes chegando</div>
-                    <div className={style.checkout}>Hóspedes saindo</div>
+
                   </div>
                   <div className={style.search}>
                     <button
@@ -174,9 +169,7 @@ function Hospedes() {
         <div className={style.container}>
           <div className={style.title}>
             <h2>Controle de hóspedes</h2>
-            <div className={style.reservation}>Total de hóspedes</div>
-            <div className={style.checkin}>Hóspedes chegando</div>
-            <div className={style.checkout}>Hóspedes saindo</div>
+
           </div>
           <div className={style.search}>
             <button
