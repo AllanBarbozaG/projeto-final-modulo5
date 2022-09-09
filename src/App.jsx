@@ -19,7 +19,7 @@ import PostFuncionarios from "./components/Funcionarios/PostFuncionarios/PostFun
 import PutFuncionarios from "./components/Funcionarios/PutFuncionarios/PutFuncionarios"
 import DeleteFuncionarios from "./components/Funcionarios/DeleteFuncionarios/DeleteFuncionarios"
 import PostLimpezas from "./components/Limpezas/PostLimpezas/PostLimpezas"
-// import UpdateLimpezas from "./components/Limpezas/UpdateLimpezas/UpdateLimpezas"
+import UpdateLimpezas from "./components/Limpezas/UpdateLimpezas/UpdateLimpezas"
 import DeleteLimpezas from "./components/Limpezas/DeleteLimpezas/DeleteLimpezas"
 
 
@@ -48,7 +48,7 @@ function App() {
                 <Route path="/funcionarios" element={<Funcionarios />} />
                 <Route path="/limpezas" element={<Limpezas />} />
                 <Route path="/addlimpeza" element={<PostLimpezas />} />
-                {/* <Route path="/updatelimpeza" element={<UpdateLimpezas />} /> */}
+                <Route path="/updatelimpeza" element={<UpdateLimpezas />} />
                 <Route path="/deletelimpeza" element={<DeleteLimpezas />} />
                 <Route path="/addfuncionario" element={<PostFuncionarios />} />
                 <Route path="/updatefuncionario" element={<PutFuncionarios />} />
