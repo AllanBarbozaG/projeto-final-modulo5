@@ -1,4 +1,5 @@
-# Full Stack Hotéis
+
+<img src="https://github.com/AllanBarbozaG/projeto-final-modulo5/blob/dev/public/logofullstackhoteis.png" />
 
 
 
@@ -18,6 +19,7 @@
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - [React](https://pt-br.reactjs.org/)
+- [Vite](https://vitejs.dev/)
 - [Vercel](https://vercel.com/)
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Node.JS](https://nodejs.org/en/)
@@ -59,24 +61,23 @@ Inicie o servidor
 https://github.com/AllanBarbozaG/projeto-final-modulo5.git
 
 ```
-## Executando:
+## Instalando o React
 
 ```bash
-$ npm install
-$ npm run dev
+  cd projeto-final-modulo5
 ```
 
+```bash
+ npm create vite@latest
+ npm run dev
+```
 
+### Conheça a aplicação
 
+```bash
+https://projeto-final-modulo5.vercel.app/  
 
-
-
-
-
-
-
-
-
+```
 
 
 ## Autores
