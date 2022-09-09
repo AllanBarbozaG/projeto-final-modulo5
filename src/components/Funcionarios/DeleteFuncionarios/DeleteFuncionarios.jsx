@@ -1,36 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { DeleteFuncionario } from "../../../service/requestFuncionarios";
-import InputwithLabel from "../../InputWithLabel/InputWithLabel";
+import Funcionarios, { funcionarioId } from "../../../Pages/Funcionarios/index.jsx";
+import { deleteFuncionario } from "../../../Pages/Funcionarios/index.jsx";
+
+import { useNavigate } from "react-router-dom";
+
 
 function DeleteFuncionarios() {
-  const [employeeId, setEmployeeId] = useState();
-  const [deleteEmployee, setDeleteEmployee] = useState(false);
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
-    setDeleteEmployee(false);
-    DeleteFuncionario(employeeId)
-    DeleteFuncionario()
+    if (deleteFuncionario) {
+    DeleteFuncionario(funcionarioId)
       .then((json) => console.log(json))
       .catch((error) => console.log(error + "deu erro"));
-  }, [deleteEmployee]);
+    }
+  }, []);
 
   return (
     <>
-    <InputwithLabel
-        htmlFor="employeeId"
-        labelText="ID:"
-        inputName="employeeId"
-        type="text"
-        callback={(e) => setEmployeeId(e.target.value)} />
-
-        <button onClick={() => setDeleteEmployee(true)}>Excluir registro de funcionário</button>
-
-       
+      <h1>Funcionário deletado com sucesso.</h1>
+      <button onClick={() => navigate("/funcionarios")}>Voltar</button>
     </>
-
-    
-
-
     
   );
 
