@@ -18,7 +18,7 @@ function Login(props) {
   return (
     <>
 
-      {!removeloadingPage && <Loading />}
+      {!removeloadingPage && <LoginPageLoading />}
       {removeloadingPage && <div className={style.container}>
         <div className={style.imgLogo}>
           <img src="./hotel.png" />
