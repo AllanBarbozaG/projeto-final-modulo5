@@ -4,6 +4,9 @@ import { GetLimpezasRequest } from "../../service/requestLimpezas";
 import Loading from '../../components/Loading';
 import style from "./limpezas.module.css"
 
+export let cleanningId = [];
+export let deleteCleanning = false;
+
 function Limpezas() {
 
     const [limpezas, setLimpezas] = useState([]);
@@ -17,6 +20,10 @@ function Limpezas() {
         setLoadingReqData(false);
         })
     }, [loadingReqData]);
+
+    useEffect(() => {
+        cleanningId = [];
+    });
 
     function handleSetPage(page) {
         navigate(page);

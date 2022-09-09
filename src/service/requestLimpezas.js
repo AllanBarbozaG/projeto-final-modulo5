@@ -11,9 +11,9 @@ export function GetLimpezasRequest() {
 export function PostLimpezasRequest(roomNumber, isItClean, employeeId, cleanningDate) {
 
     const newCleanning = {
-        "numeroQuarto": roomNumber,
-        "controle": isItClean,
-        "id_funcionario": employeeId,
+        "numeroQuarto": Number(roomNumber),
+        "controle": Number(isItClean),
+        "id_funcionario": Number(employeeId),
         "dataEntrada": cleanningDate,
     }
 
@@ -35,8 +35,8 @@ export function PutLimpezasRequest(roomNumber, isItClean, employeeId, cleanningD
     const newCleanning = {
 
         "numeroQuarto": Number(roomNumber),
-        "controle": isItClean,
-        "id_funcionario": employeeId,
+        "controle": Number(isItClean),
+        "id_funcionario": Number(employeeId),
         "dataEntrada": cleanningDate,
     }
 
