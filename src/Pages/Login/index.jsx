@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Loading from "../../components/Loading";
+import LoginPageLoading from "../../components/LoginPageLoading/index";
 import style from "./login.module.css";
 
 function Login(props) {
@@ -19,7 +19,7 @@ function Login(props) {
 
   return (
     <>
-      {!removeloadingPage && <Loading />}
+      {!removeloadingPage && <LoginPageLoading />}
       {removeloadingPage && (
         <div className={style.container}>
           <div className={style.imgLogo}>
