@@ -13,17 +13,15 @@ function Login(props) {
   useEffect(() => {
     setTimeout(() => {
       setRemoveLoadingPage(true);
-      console.log('carregou')
-      
+      console.log("carregou");
     }, 3000);
-    
   }, []);
-  
 
   return (
     <>
       {!removeloadingPage && <Loading />}
-      {removeloadingPage &&  <div  className={style.container}>
+      {removeloadingPage && (
+        <div className={style.container}>
           <div className={style.imgLogo}>
             <img src="./hotel.png" />
           </div>
@@ -40,11 +38,10 @@ function Login(props) {
             </div>
             <button type="submit">Entrar</button>
           </form>
-        </div>}
-       
-
+        </div>
+      )}
     </>
-  ) 
+  );
 }
 
 export default Login;
