@@ -14,10 +14,7 @@ function Login(props) {
     setTimeout(() => {
       setRemoveLoadingPage(true);
     }, 5000);
-
   }, []);
-
-
   return (
     <>
       {!removeloadingPage && <Loading />}
@@ -40,9 +37,8 @@ function Login(props) {
         </form>
       </div>}
 
-
     </>
-  )
+  );
 }
 
 export default Login;
