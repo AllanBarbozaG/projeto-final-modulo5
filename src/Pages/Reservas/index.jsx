@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import Loading from '../../components/Loading';
 import { useNavigate } from 'react-router-dom';
 import style from "./reservas.module.css"
 
 function Reservas() {
+    const [loading, setLoading] = useState(true)
     const [reservas, setReservas] = useState([])
     const navigate = useNavigate()
 
@@ -10,6 +12,7 @@ function Reservas() {
         const response = await fetch('http://localhost:3000/reservas');
         const data = await response.json();
         setReservas(data);
+        setLoading(false)
     }
     useEffect(() => {
         fetchReserva()
@@ -25,20 +28,19 @@ function Reservas() {
         });
         const data = await response.json();
         alert(data.Mensagem)
-
     }
-
+    if (loading) {
+        return <Loading />
+    }
     return (
+
         <div className={style.container}>
             <div className={style.title}>
                 <h2>Controle de reservas</h2>
-                <div className={style.reservation}>Total de reservas</div>
-                <div className={style.checkin}>Hóspedes chegando</div>
-                <div className={style.checkout}>Hóspedes saindo</div>
+
             </div>
             <div className={style.search}>
                 <button type="button" onClick={handleClick} className={style.buttonCreate}>Adicionar reserva</button>
-                <input type={"text"} placeholder="Buscar CPF" />
             </div>
 
 
@@ -85,9 +87,8 @@ function Reservas() {
                                     {dados.dataSaida}
                                 </td>
                                 <td className={style.icons}>
-                                    <img src="./view.png" />
                                     <img src="./lapis.png" onClick={(e) => {
-                                        navigate("/attreserva")
+                                        navigate(`/attreserva/${dados.id}`)
                                     }} />
                                     <img src="./lixeira.png" onClick={
                                         () => deleteClick(dados.id)} />
