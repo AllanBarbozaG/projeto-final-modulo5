@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetLimpezasRequest } from "../../service/requestLimpezas";
-import Loading from '../../components/Loading';
+import Loading from '../../components/Loading/index';
 import style from "./limpezas.module.css"
 
 export let cleanningId = [];
@@ -11,6 +11,7 @@ function Limpezas() {
 
     const [limpezas, setLimpezas] = useState([]);
     const [loadingReqData, setLoadingReqData] = useState(true);
+    const [deleteCleanningId, setDeleteCleanningId] = useState();
 
     const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ function Limpezas() {
         setLimpezas(data);
         setLoadingReqData(false);
         })
-    }, [loadingReqData]);
+    }, []);
 
     useEffect(() => {
         cleanningId = [];
@@ -77,7 +78,7 @@ function Limpezas() {
                                 {limpezas.map((limpeza) => {
                                     return (
                                         <tr className={style.body} key={limpeza.id}>
-                                            <td scope="row" className={style.linhas}>{limpeza.id}</td>
+                                            <td className={style.linhas}>{limpeza.id}</td>
                                             <td className={style.linhas}>{limpeza.numeroQuarto}</td>
                                             <td className={style.linhas}>{limpeza.controle}</td>
                                             <td className={style.linhas}>{limpeza.id_funcionario}</td>
@@ -86,6 +87,7 @@ function Limpezas() {
                                                 <img
                                                     src="./lapis.png"
                                                     onClick={(e) => {
+                                                        cleanningId.push(limpeza.id)
                                                         navigate("/updatelimpeza");
                                                     }}
                                                     />
@@ -97,8 +99,10 @@ function Limpezas() {
                                                     "Tem certeza de que deseja excluir o registro desta limpeza? Não será possível recuperar os dados."
                                                     );
                                                     if (confirmation == true) {
-                                                    setGuestCpf(limpeza.id);
-                                                    navigate("/deletelimpeza");
+                                                        setDeleteCleanningId(limpeza.id);
+                                                        cleanningId.push(limpeza.id)
+                                                        deleteCleanning = true;
+                                                        navigate("/deletelimpeza");
                                                     }
                                                 }}
                                                 />
