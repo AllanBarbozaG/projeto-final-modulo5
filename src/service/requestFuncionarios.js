@@ -23,8 +23,10 @@ export function PostFuncionario(employeeName, admissionDate) {
     headers: {
       'Content-Type': 'application/json'
     }
-  }).then(response =>
+  }).then(response => {
+    console.log(employeeName, admissionDate)
     response.json()
+  }
   )
 }
 
