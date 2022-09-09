@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import Loading from "../../components/Loading";
 import style from "./login.module.css";
 
 function Login(props) {
-  const [loadingPage, setLoadingPage] = useState(true);
+  const [removeloadingPage, setRemoveLoadingPage] = useState(false);
 
   function handleSubmit(eve) {
     eve.preventDefault();
@@ -10,19 +11,19 @@ function Login(props) {
   }
 
   useEffect(() => {
-    setLoadingPage(false);
-  }, [loadingPage]);
+    setTimeout(() => {
+      setRemoveLoadingPage(true);
+      console.log('carregou')
+      
+    }, 3000);
+    
+  }, []);
+  
 
   return (
     <>
-      {loadingPage ? (
-        <>
-          {/* COLOCAR ANIMAÇÃO DE CARREGAMENTO DA PÁGINA AQUI */}
-          <h1>Carregando...</h1>
-          {console.log("carregandooo")}
-        </>
-      ) : (
-        <div onLoad={() => setLoadingPage(false)} className={style.container}>
+      {!removeloadingPage && <Loading />}
+      {removeloadingPage &&  <div  className={style.container}>
           <div className={style.imgLogo}>
             <img src="./hotel.png" />
           </div>
@@ -39,10 +40,11 @@ function Login(props) {
             </div>
             <button type="submit">Entrar</button>
           </form>
-        </div>
-      )}
+        </div>}
+       
+
     </>
-  );
+  ) 
 }
 
 export default Login;
