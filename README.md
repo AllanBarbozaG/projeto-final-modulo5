@@ -1,12 +1,18 @@
 
+
 <img src="https://github.com/AllanBarbozaG/projeto-final-modulo5/blob/dev/public/logofullstackhoteis.png" />
 
 
 
+
+
+
 <div align='center'> 
+ 
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+ 
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
   <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
@@ -28,6 +34,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 🎫 Como instalar:
 
+ 
 ### Primeiro será necessário clonar o repositório da API:
 
 Seguem as instruções:
@@ -56,6 +63,25 @@ Inicie o servidor
 ```
 
 ### Clonando o repositório deste projeto:
+ 
+Clone o projeto
+
+```bash
+https://github.com/AllanBarbozaG/projeto-final-modulo5.git
+
+```
+## Executando:
+
+```bash
+$ npm install
+$ npm start
+```
+
+
+
+
+
+ 
 
 ```bash
 https://github.com/AllanBarbozaG/projeto-final-modulo5.git
