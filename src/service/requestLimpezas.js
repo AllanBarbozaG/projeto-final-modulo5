@@ -30,7 +30,7 @@ export function PostLimpezasRequest(roomNumber, isItClean, employeeId, cleanning
 
 }
 
-export function PutLimpezasRequest(roomNumber, isItClean, employeeId, cleanningDate) {
+export function PutLimpezasRequest(cleanningId, roomNumber, isItClean, employeeId, cleanningDate) {
 
     const newCleanning = {
 

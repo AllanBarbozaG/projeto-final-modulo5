@@ -1,20 +1,20 @@
-import { DeleteLimpezasRequest} from "../../../service/requestHospedes.js";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { DeleteLimpezasRequest} from "../../../service/requestLimpezas.js";
+import { cleanningId, deleteCleanning } from "../../../Pages/Limpezas/index";
 
 function DeleteLimpezas() {
-    const [cleanningId, setCleanningId] = useState();
-    const [deleteCleanning, setDeleteCleanning] = useState(false);
 
     const navigate = useNavigate();
 
     useEffect(() => {
-        setDeleteCleanning(false);
-        DeleteCleanning(cleanningId)
-        DeleteLimpezasRequest()
+        if(deleteCleanning){
+            DeleteLimpezasRequest(cleanningId)
             .then((json) => console.log(json))
-            .catch((error) => console.log(error + "deu erro"));
-        }, [deleteCleanning]);
+            .catch((error) => console.log(error + "erro"));
+        }
+        
+    }, []);
 
     return (
         <>
