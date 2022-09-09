@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetLimpezasRequest } from "../../service/requestLimpezas";
+import Loading from '../../components/Loading';
 import style from "./limpezas.module.css"
 
 function Limpezas() {
@@ -21,15 +22,12 @@ function Limpezas() {
         navigate(page);
     }
 
+    if (loadingReqData) {
+        return <Loading />
+    }
         return (
         <>
-            {loadingReqData ? (
-            <>
-                <div>CARREGANDO...</div>
-                {console.log("carregando")}
-            </>
-            ) : (
-                <div className={style.container}>
+            <div className={style.container}>
                     <div className={style.title}>
                         <h2>Controle de Limpezas</h2>
                     </div>
@@ -44,8 +42,6 @@ function Limpezas() {
                         </button>
                         <input type={"text"} placeholder="Buscar limpeza" />
                     </div>
-
-
                     <div className={style.containerTable}>
                         <table className={style.table}>
                             <thead className={style.thead}>
@@ -80,7 +76,6 @@ function Limpezas() {
                                             <td className={style.linhas}>{limpeza.id_funcionario}</td>
                                             <td className={style.linhas}>{limpeza.dataEntrada}</td>
                                             <td className={style.icons}>
-                                                <img src="./view.png" />
                                                 <img
                                                     src="./lapis.png"
                                                     onClick={(e) => {
@@ -104,11 +99,10 @@ function Limpezas() {
                                         </tr>
                                     );
                                 })}
-                            </tbody>
-                        </table>
-                    </div>
-                </div >
-            )}
+                        </tbody>
+                    </table>
+                </div>
+            </div >
         </>
     )
 }
