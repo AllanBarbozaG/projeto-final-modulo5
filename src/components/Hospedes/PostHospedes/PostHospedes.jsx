@@ -5,16 +5,12 @@ import style from "./PostHospedes.module.css";
 
 function PostHospedes() {
   const [guestCpf, setGuestCpf] = useState();
-  // console.log(guestCpf);
   const [guestName, setGuestName] = useState("");
-  // console.log(guestName)
   const [guestRoomNumber, setGuestRoomNumber] = useState(0);
-  console.log(typeof guestRoomNumber);
   const [guestPhoneNumber, setGuestPhoneNumber] = useState("");
-  // console.log(guestPhoneNumber)
   const [sendRequest, setSendRequest] = useState(false);
   const [requestResponse, setResquestResponse] = useState({});
-  console.log(requestResponse);
+
 
   useEffect(() => {
     if (sendRequest) {
@@ -113,7 +109,7 @@ function PostHospedes() {
 
       {/* Treating server responses */}
       {requestResponse ==
-      "SQLITE_CONSTRAINT: UNIQUE constraint failed: hospedes.cpf" ? (
+        "SQLITE_CONSTRAINT: UNIQUE constraint failed: hospedes.cpf" ? (
         <h3>
           Cadastro não realizado. Este número de CPF já está cadastrado como
           hospede ativo.

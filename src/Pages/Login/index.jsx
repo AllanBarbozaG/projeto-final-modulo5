@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Loading from "../../components/Loading";
+import LoginPageLoading from "../../components/LoginPageLoading/index";
 import style from "./login.module.css";
 
 function Login(props) {
@@ -13,33 +13,32 @@ function Login(props) {
   useEffect(() => {
     setTimeout(() => {
       setRemoveLoadingPage(true);
-      console.log("carregou");
-    }, 3000);
+    }, 5000);
   }, []);
-
   return (
     <>
-      {!removeloadingPage && <Loading />}
-      {removeloadingPage && (
-        <div className={style.container}>
-          <div className={style.imgLogo}>
-            <img src="./hotel.png" />
+
+      {!removeloadingPage && <LoginPageLoading />}
+      {removeloadingPage && <div className={style.container}>
+        <div className={style.imgLogo}>
+          <img src="./hotel.png" />
+        </div>
+
+        <form className={style.forms} onSubmit={handleSubmit}>
+          <label htmlFor="register"> Matrícula:</label>
+          <div className={style.inputs}>
+            <input type={"text"} id="register" />
+
           </div>
 
-          <form className={style.forms} onSubmit={handleSubmit}>
-            <label htmlFor="register"> Matrícula:</label>
-            <div className={style.inputs}>
-              <input type={"text"} id="register" />
-            </div>
+          <label htmlFor="password">Senha:</label>
+          <div className={style.inputs}>
+            <input type={"password"} id="password" />
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>}
 
-            <label htmlFor="password">Senha:</label>
-            <div className={style.inputs}>
-              <input type={"password"} id="password" />
-            </div>
-            <button type="submit">Entrar</button>
-          </form>
-        </div>
-      )}
     </>
   );
 }

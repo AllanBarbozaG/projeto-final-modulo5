@@ -12,9 +12,9 @@ function Home() {
     <>
       {loadingPage ? (
         <>
-          {/* COLOCAR ANIMAÇÃO DE CARREGAMENTO DA PÁGINA AQUI */}
+
           <h1>Carregando...</h1>
-          {console.log("carregandooo")}
+
         </>
       ) : (
         <div onLoad={() => setLoadingPage(false)} className={style.container}>

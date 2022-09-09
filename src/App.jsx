@@ -19,10 +19,7 @@ import PostFuncionarios from "./components/Funcionarios/PostFuncionarios/PostFun
 import PutFuncionarios from "./components/Funcionarios/PutFuncionarios/PutFuncionarios"
 import DeleteFuncionarios from "./components/Funcionarios/DeleteFuncionarios/DeleteFuncionarios"
 import PostLimpezas from "./components/Limpezas/PostLimpezas/PostLimpezas"
-
 import DeleteLimpezas from "./components/Limpezas/DeleteLimpezas/DeleteLimpezas"
-
-
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -48,7 +45,6 @@ function App() {
                 <Route path="/funcionarios" element={<Funcionarios />} />
                 <Route path="/limpezas" element={<Limpezas />} />
                 <Route path="/addlimpeza" element={<PostLimpezas />} />
-                
                 <Route path="/deletelimpeza" element={<DeleteLimpezas />} />
                 <Route path="/addfuncionario" element={<PostFuncionarios />} />
                 <Route path="/updatefuncionario" element={<PutFuncionarios />} />

@@ -5,8 +5,7 @@ function GetFuncionarios() {
   const [funcionarios, setFuncionarios] = useState([]);
   const [showEmployees, setShowEmployees] = useState(true);
   const [countEmployees, setCountEmployees] = useState(0);
-  console.log(funcionarios);
-  console.log(showEmployees);
+
 
 
   useEffect(() => {
@@ -14,20 +13,20 @@ function GetFuncionarios() {
       setFuncionarios(data);
     });
   }, []);
-  console.log(funcionarios)
+
   return (
     <>
       {
         showEmployees &&
         funcionarios.map((funcionario, index) => {
-        return (
-          <div key={index}>
-          <p>
-            {funcionario.nome} {funcionario.data_admissao}{" "}
-          </p>
-          </div>
-        );
-      })}
+          return (
+            <div key={index}>
+              <p>
+                {funcionario.nome} {funcionario.data_admissao}{" "}
+              </p>
+            </div>
+          );
+        })}
     </>
   );
 }
