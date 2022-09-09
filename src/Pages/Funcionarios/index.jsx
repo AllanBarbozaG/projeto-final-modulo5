@@ -123,7 +123,6 @@ function Funcionarios() {
             </table>
           </div>
         </div>
-      )
     </>
     );
 }
