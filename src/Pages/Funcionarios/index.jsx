@@ -22,8 +22,7 @@ function Funcionarios() {
     const [loadingReqData, setLoadingReqData] = useState(true);
 
     const [idFunctionario, setIdFunctionario] = useState();
-    console.log(idFunctionario);
-    console.log(funcionarioId);
+    
     const navigate = useNavigate();
 
     useEffect(() => {

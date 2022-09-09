@@ -31,9 +31,9 @@
   }
   
   .button {
-    width: 250px;
     border-radius: 30px;
     background-color: rgb(232, 225, 225);
+    margin-top: 10px;
   }
   
   .containerButton {
@@ -43,9 +43,3 @@
     justify-content: center;
   }
   
-  .titleh3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 20px;
-  }
